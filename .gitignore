@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+*.egg-info/
+
+# local C2PA test material — never commit keys
+c2pa-test-certs/
+*.pem
+*.key
+
+data/media/
+.DS_Store

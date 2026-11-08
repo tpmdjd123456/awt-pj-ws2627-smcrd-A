@@ -49,6 +49,38 @@ Capture → Normalise → Probe (C2PA · perceptual hash · web search) → Scor
 The three probes run independently, so a missing API key lowers confidence
 rather than breaking the tool.
 
+## Running the service
+
+```bash
+pip install -r requirements.txt
+uvicorn service.main:app --reload --port 8000
+```
+
+```bash
+curl -s localhost:8000/health
+curl -s -X POST localhost:8000/verify \
+     -H 'content-type: application/json' \
+     -d '{"media_url": "https://example.social/media/abc.jpg"}'
+```
+
+`POST /verify` is a stub — it returns a hardcoded example regardless of input,
+so the extension can be built against the real shape before the probes exist.
+Add `?empty=true` for the no-evidence response, which the panel also has to
+handle.
+
+Interactive schema: <http://localhost:8000/docs> · contract: [`docs/api.md`](docs/api.md)
+
+### C2PA probe
+
+```bash
+python -m service.probes.c2pa_probe path/to/file.jpg
+```
+
+Prints the manifest summary, or reports that there is none. **No manifest is
+the expected result** for anything downloaded from social media — platforms
+strip them on upload. How often that happens across our corpus is a finding
+for the report, not a bug.
+
 ## Team
 
 - Maryam Afzal Khan
