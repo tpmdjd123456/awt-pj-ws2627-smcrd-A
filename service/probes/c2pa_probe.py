@@ -48,11 +48,18 @@ def read_manifest(path: str | Path) -> dict[str, Any] | None:
 
     path = Path(path)
 
+    # Check this ourselves. c2pa wraps a missing file in C2paError.Io, which
+    # would otherwise be indistinguishable from "this file has no manifest" —
+    # and a failed download must not look like media without provenance.
+    if not path.is_file():
+        raise FileNotFoundError(path)
+
     try:
         reader = c2pa.Reader(str(path))
-    except c2pa.C2paError:
-        # Covers ManifestNotFound ("no JUMBF data found") and unsupported
-        # types. Both mean: nothing to report for this file.
+    except (c2pa.C2paError.ManifestNotFound, c2pa.C2paError.NotSupported):
+        # No JUMBF data, or a format c2pa cannot parse. Both mean: nothing to
+        # report for this file. Every other C2paError propagates — a decoding
+        # or signature failure is a real problem and should be loud.
         return None
 
     try:
