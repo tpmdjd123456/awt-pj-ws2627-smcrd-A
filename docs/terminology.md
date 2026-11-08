@@ -1,5 +1,7 @@
 # Terminology — decided
 
+Agreed by all three, 8 November 2026. Settled, not up for revisiting.
+
 Raised by André Paul in Workshop 1: we were using "earliest appearance" and
 "original context" as if they were the same thing, while also admitting the
 earliest copy we find may not be the original. This closes that.
