@@ -81,6 +81,21 @@ the expected result** for anything downloaded from social media — platforms
 strip them on upload. How often that happens across our corpus is a finding
 for the report, not a bug.
 
+Two fixtures are committed so both branches can be checked:
+
+```bash
+python -m service.probes.c2pa_probe tests/fixtures/signed-sample.jpg    # valid manifest
+python -m service.probes.c2pa_probe tests/fixtures/unsigned-sample.jpg  # no manifest
+```
+
+`read_manifest_bytes(data, mime_type)` is the entry point the service uses —
+media arrives from a download, in memory. `read_manifest(path)` wraps it for
+the CLI.
+
+Regenerate the signed fixture with `python tools/make_test_fixture.py <in> <out>`.
+It uses the public c2pa-rs test certificates and documents the two traps that
+cost an afternoon.
+
 ## Team
 
 - Maryam Afzal Khan
