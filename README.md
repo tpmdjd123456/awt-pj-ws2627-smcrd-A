@@ -37,6 +37,9 @@ These are kept strictly separate:
 **Rule:** never derive attested context from earliest appearance. The earliest
 copy we find may not be the original, and may itself carry a false claim.
 
+Full decision, with the date fields and what it changes in the schema and API:
+[`docs/terminology.md`](docs/terminology.md).
+
 ## Pipeline
 
 ```
