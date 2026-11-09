@@ -1,11 +1,9 @@
-// Runs on X, Instagram and TikTok. Remembers what was right-clicked and reads the
-// surrounding post. Selectors are best-effort: these sites change their HTML often.
+// Runs on X, Instagram and TikTok. Remembers what was right-clicked and reads the surrounding post. Selectors are best-effort: these sites change their HTML often.
 let last = { target: null, x: 0, y: 0 };
 
 let cached = null;
 
-// Read the post at the moment of the right-click. X swaps image elements on
-// hover, so by the time the menu item is clicked the target can be gone.
+// Read the post at the moment of the right-click. X swaps image elements on hover, so by the time the menu item is clicked the target can be gone.
 document.addEventListener(
   "contextmenu",
   (e) => {
@@ -44,7 +42,7 @@ function capture() {
   };
 }
 
-// ---------- media under the cursor (works through overlay layers) ----------
+// media under the cursor (works through overlay layers)
 function mediaAtClick(el) {
   for (const node of document.elementsFromPoint(last.x, last.y)) {
     if (node.tagName === "IMG" || node.tagName === "VIDEO") return node;
@@ -69,7 +67,7 @@ function text(node) {
   return t ? t : null;
 }
 
-// ---------- X ----------
+// Specifically for X
 function extractX(el) {
   const article = el.closest('article[data-testid="tweet"]') || el.closest("article");
   if (!article) return { platform: "x" };
@@ -87,7 +85,7 @@ function extractX(el) {
   };
 }
 
-// ---------- Instagram ----------
+// Specifically for Insta
 function extractInstagram(el) {
   const root = el.closest("article") || el.closest('[role="dialog"]') || document;
   const timeEl = root.querySelector("time[datetime]");
@@ -122,7 +120,7 @@ function extractInstagram(el) {
   };
 }
 
-// ---------- TikTok ----------
+// Specifically for TikTok
 function extractTikTok(el) {
   const root =
     el.closest('[data-e2e="recommend-list-item-container"]') ||

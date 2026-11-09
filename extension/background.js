@@ -4,7 +4,7 @@ const USE_EMPTY_STUB = false; // true = test the "no evidence" response (?empty=
 
 const SUPPORTED_SITES = [
   "https://x.com/*",
-  "https://twitter.com/*",
+  "https://twitter.com/*", // wasn't sure if the old adress should be added but here it is
   "https://www.instagram.com/*",
   "https://www.tiktok.com/*",
 ];
@@ -14,8 +14,7 @@ chrome.runtime.onInstalled.addListener(() => {
     chrome.contextMenus.create({
       id: "smcrd-check",
       title: "Check where this appeared before",
-      // "page" too: Instagram and TikTok put invisible layers over their media,
-      // so Chrome often doesn't see an image or video under the cursor.
+      // "page" too: Instagram and TikTok put invisible layers over their media, so Chrome often doesn't see an image or video under the cursor.
       contexts: ["image", "video", "page"],
       documentUrlPatterns: SUPPORTED_SITES,
     });
