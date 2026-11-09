@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "SMCRD – Context Recovery",
+  "version": "0.2.1",
+  "description": "Right-click an image or video in a feed to see where it appeared before.",
+  "permissions": ["contextMenus", "sidePanel", "storage"],
+  "host_permissions": ["http://localhost:8000/*"],
+  "background": { "service_worker": "background.js" },
+  "side_panel": { "default_path": "sidepanel.html" },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://x.com/*",
+        "https://twitter.com/*",
+        "https://www.instagram.com/*",
+        "https://www.tiktok.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
