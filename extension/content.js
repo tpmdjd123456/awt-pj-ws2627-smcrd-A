@@ -32,11 +32,20 @@ function capture() {
   const media = mediaInfo(mediaAtClick(el));
   const { platform, ...fields } = post;
   const postFound = Object.values(fields).some((v) => v);
+  // follows the week 1 instructions now :)
   return {
     found: postFound || !!media.media_url,
     data: {
-      ...post,
-      ...media,
+      platform,
+      media_url: media.media_url,
+      media_type: media.media_kind,
+      video_poster: media.video_poster,
+      post_caption: post.caption ?? null,
+      post_author: post.author_handle || post.author_name || null,
+      post_author_name: post.author_name ?? null,
+      post_date: post.timestamp ?? null,
+      post_date_source: post.timestamp_source ?? null,
+      post_url: post.post_url ?? null,
       capture_error: postFound ? null : "Media found, but no post details around it.",
     },
   };

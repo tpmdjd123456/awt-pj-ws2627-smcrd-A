@@ -1,4 +1,5 @@
 // Service worker: context menu → capture from page → stub service → side panel.
+const CALL_SERVICE = false; // for now no call to the verification service. Set CALL_SERVICE = true only to try the panel against the local stub (uvicorn on :8000); keep it false in commits until week 2
 const SERVICE_URL = "http://localhost:8000";
 const USE_EMPTY_STUB = false; // true = test the "no evidence" response (?empty=true)
 
@@ -25,20 +26,23 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
   if (info.menuItemId !== "smcrd-check" || !tab?.id) return;
   // Must run first and synchronously: opening the panel needs the user's click.
   chrome.sidePanel.open({ tabId: tab.id });
+  console.log("[SMCRD] clicked media URL:", info.srcUrl ?? "(none — page context)"); //added console log 
   handleClick(info, tab);
 });
 
 async function handleClick(info, tab) {
   const capture = {
+    platform: null,
     media_url: info.srcUrl || null,
     media_type: info.mediaType || null,
-    page_url: info.pageUrl || null,
-    platform: null,
-    caption: null,
-    author_name: null,
-    author_handle: null,
-    timestamp: null,
+    video_poster: null,
+    post_caption: null,
+    post_author: null,
+    post_author_name: null,
+    post_date: null,
+    post_date_source: null,
     post_url: null,
+    page_url: info.pageUrl || null,
     capture_error: null,
     captured_at: new Date().toISOString(),
   };
@@ -69,8 +73,14 @@ async function handleClick(info, tab) {
       "Media URL is a blob: stream; the service can't download it. Use the post URL instead (week 2).";
   }
 
-  await chrome.storage.session.set({ capture, result: null, status: "loading", error: null });
+  console.log("[SMCRD] capture:", capture);
 
+  if (!CALL_SERVICE) {
+    await chrome.storage.session.set({ capture, result: null, status: "captured", error: null });
+    return;
+  }
+
+  await chrome.storage.session.set({ capture, result: null, status: "loading", error: null });
   try {
     const url = `${SERVICE_URL}/verify${USE_EMPTY_STUB ? "?empty=true" : ""}`;
     const res = await fetch(url, {

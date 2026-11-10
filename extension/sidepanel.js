@@ -5,35 +5,36 @@ function fill(dl, rows) {
     const dt = document.createElement("dt");
     dt.textContent = label;
     const dd = document.createElement("dd");
-    dd.textContent = value ?? "—";
+    dd.textContent = value ?? "not found";
     dl.append(dt, dd);
   }
 }
 
 function render({ capture, result, status, error }) {
   const statusEl = document.getElementById("status");
-  if (status === "loading") statusEl.textContent = "Checking…";
+  if (status === "captured") statusEl.textContent = "Captured.";
+  else if (status === "loading") statusEl.textContent = "Checking…";
   else if (status === "error") statusEl.textContent = error;
   else if (status === "done") statusEl.textContent = "Done (stubbed result).";
 
   if (capture) {
     fill(document.getElementById("capture"), [
       ["Media URL", capture.media_url],
-      ["Media type", capture.media_type],
-      ["Platform", capture.platform],
-      ["Author", [capture.author_name, capture.author_handle].filter(Boolean).join(" ") || null],
-      ["Posted at", capture.timestamp
-        ? `${capture.timestamp}${capture.timestamp_source === "video_id" ? " (from video ID)" : ""}`
+      ["Caption", capture.post_caption],
+      ["Author", capture.post_author],
+      ["Timestamp", capture.post_date
+        ? `${capture.post_date}${capture.post_date_source === "video_id" ? " (from video ID)" : ""}`
         : null],
-      ["Post URL", capture.post_url],
-      ["Video poster", capture.video_poster],
-      ["Caption", capture.caption],
+      ["Permalink", capture.post_url],
+      ["Platform", capture.platform],
+      ["Media type", capture.media_type],
       ["Capture problem", capture.capture_error],
     ]);
   }
 
   const resultDl = document.getElementById("result");
   const raw = document.getElementById("raw");
+  document.getElementById("service").hidden = !result && status !== "loading" && status !== "error";
   if (!result) { resultDl.replaceChildren(); raw.textContent = ""; return; }
 
   const e = result.earliest_known_appearance;
