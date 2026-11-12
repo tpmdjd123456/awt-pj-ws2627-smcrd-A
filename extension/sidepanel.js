@@ -20,10 +20,13 @@ function render({ capture, result, status, error }) {
   if (capture) {
     fill(document.getElementById("capture"), [
       ["Media URL", capture.media_url],
+      ["Media URL expires", capture.media_url_expires],
+      ["Text on media (alt)", capture.media_alt],
+      ["Video poster", capture.video_poster],
       ["Caption", capture.post_caption],
       ["Author", capture.post_author],
       ["Timestamp", capture.post_date
-        ? `${capture.post_date}${capture.post_date_source === "video_id" ? " (from video ID)" : ""}`
+        ? `${capture.post_date}${capture.post_date_source === "video_id" ? " (from video ID)" : ""}${capture.post_date_source === "shortcode" ? " (from post ID, ±1 min)" : ""}`
         : null],
       ["Permalink", capture.post_url],
       ["Platform", capture.platform],

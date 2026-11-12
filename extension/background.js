@@ -73,6 +73,8 @@ async function handleClick(info, tab) {
       "Media URL is a blob: stream; the service can't download it. Use the post URL instead (week 2).";
   }
 
+  // Change in media URL expiry
+  capture.media_url_expires = mediaUrlExpiry(capture.media_url);
   console.log("[SMCRD] capture:", capture);
 
   if (!CALL_SERVICE) {
@@ -96,4 +98,16 @@ async function handleClick(info, tab) {
       error: `Could not reach the service at ${SERVICE_URL} (${e.message}). Is uvicorn running?`,
     });
   }
+}
+
+// Instagram CDN: oe = hex Unix time. TikTok CDN: x-expires = Unix time.
+function mediaUrlExpiry(url) {
+  try {
+    const p = new URL(url).searchParams;
+    const oe = p.get("oe");
+    if (oe && /^[0-9a-f]+$/i.test(oe)) return new Date(parseInt(oe, 16) * 1000).toISOString();
+    const xe = p.get("x-expires");
+    if (xe && /^\d+$/.test(xe)) return new Date(Number(xe) * 1000).toISOString();
+  } catch {}
+  return null;
 }
