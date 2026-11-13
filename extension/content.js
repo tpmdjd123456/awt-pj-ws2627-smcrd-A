@@ -192,7 +192,7 @@ function extractInstagram(el, mediaEl) {
   }
 
   // Reels: author and caption are drawn on top of the video. Only what is visibly on top of the current video counts (other reels are pre-loaded underneath it).
-    if ((!handle || !caption) && mediaEl && (reelViewer || /^\/reels?\//.test(location.pathname))) {
+  if ((!handle || !caption) && mediaEl && (reelViewer || /^\/reels?\//.test(location.pathname))) {
     const over = overlayOnMedia(mediaEl);
     handle = handle || over.handle;
     caption = caption || over.caption;
@@ -200,7 +200,7 @@ function extractInstagram(el, mediaEl) {
 
   // Post page / modal: walk up from the caption's <time> or the clicked element.
   // Not on the reels feed: there it ends up in a neighbouring reel.
-    if ((!handle || !caption) && !reelViewer && !location.pathname.startsWith("/reels/")) {
+  if ((!handle || !caption) && !reelViewer && !location.pathname.startsWith("/reels/")) {
     const near = postBlockAround(timeEl || el);
     handle = handle || near.handle;
     caption = caption || near.caption;
