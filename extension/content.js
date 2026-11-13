@@ -157,13 +157,19 @@ function xMediaForPost(el) {
 // Three layouts: feed (<article>), post page/modal (caption shown as first comment), reels viewer (no <time>, author and caption on top of the video).
 function extractInstagram(el, mediaEl) {
   const root = el.closest("article") || el.closest('[role="dialog"]') || document;
-  const timeEl = root.querySelector("time[datetime]");
   const isPostPage = /\/(p|reel|reels)\//.test(location.pathname);
-    const rawPostUrl =
+  // Reel viewer (also when opened from the home feed): a video that is not part of a feed post.
+  // Its author and caption sit on top of the video. Everything else on the page belongs to
+  // other posts, so page-wide <time>, header, h1 and post links must not be used.
+  // THIS IS THE FIX FOR REELS 
+  const reelViewer =
+    mediaEl?.tagName === "VIDEO" && !mediaEl.closest("article") && !el.closest("article");
+  const timeEl = reelViewer ? null : root.querySelector("time[datetime]");
+  const rawPostUrl =
     el.closest('a[href*="/p/"], a[href*="/reel/"]')?.href || // a tile in the explore/profile grid
     timeEl?.closest("a")?.href ||
     (root === document && isPostPage ? location.href : null) ||
-    root.querySelector('a[href*="/p/"], a[href*="/reel/"]')?.href ||
+    (reelViewer ? null : root.querySelector('a[href*="/p/"], a[href*="/reel/"]')?.href) ||
     (isPostPage ? location.href : null);
   // Keep only /p/<code>/ or /reel/<code>/ — drops extras like /liked_by/ or ?img_index=1
   const code = rawPostUrl?.match(/\/(p|reel|reels)\/([^/?#]+)/);
@@ -171,12 +177,12 @@ function extractInstagram(el, mediaEl) {
     ? `https://www.instagram.com/${code[1] === "reels" ? "reel" : code[1]}/${code[2]}/`
     : null;
 
-  const authorLink = root.querySelector('header a[href^="/"]');
+  const authorLink = reelViewer ? null : root.querySelector('header a[href^="/"]');
   let handle = authorLink?.getAttribute("href")?.replace(/\//g, "") || null;
 
   // Post page: caption is in an h1. Feed: take the longest text span in the post.
-  let caption = text(root.querySelector("h1"));
-  if (!caption && root !== document) {
+  let caption = reelViewer ? null : text(root.querySelector("h1"));
+  if (!caption && root !== document && !reelViewer) {
     let best = "";
     for (const s of root.querySelectorAll('span[dir="auto"]')) {
       const t = s.innerText?.trim() || "";
@@ -186,7 +192,7 @@ function extractInstagram(el, mediaEl) {
   }
 
   // Reels: author and caption are drawn on top of the video. Only what is visibly on top of the current video counts (other reels are pre-loaded underneath it).
-  if ((!handle || !caption) && mediaEl && /^\/reels?\//.test(location.pathname)) {
+    if ((!handle || !caption) && mediaEl && (reelViewer || /^\/reels?\//.test(location.pathname))) {
     const over = overlayOnMedia(mediaEl);
     handle = handle || over.handle;
     caption = caption || over.caption;
@@ -194,7 +200,7 @@ function extractInstagram(el, mediaEl) {
 
   // Post page / modal: walk up from the caption's <time> or the clicked element.
   // Not on the reels feed: there it ends up in a neighbouring reel.
-  if ((!handle || !caption) && !location.pathname.startsWith("/reels/")) {
+    if ((!handle || !caption) && !reelViewer && !location.pathname.startsWith("/reels/")) {
     const near = postBlockAround(timeEl || el);
     handle = handle || near.handle;
     caption = caption || near.caption;
@@ -224,7 +230,7 @@ function extractInstagram(el, mediaEl) {
 function postBlockAround(startEl) {
   const userHref = (a) => {
     const h = a.getAttribute("href") || "";
-    return /^\/[A-Za-z0-9._]+\/$/.test(h) && !/^\/(explore|reels|direct|accounts)\/$/.test(h)
+    return /^\/[A-Za-z0-9._]+\/$/.test(h) && !/^\/(explore|reels|direct|accounts|notifications|stories)\/$/.test(h)
       ? h.replace(/\//g, "")
       : null;
   };
@@ -273,7 +279,7 @@ function overlayOnMedia(mediaEl) {
   let handle = null;
   for (const a of document.querySelectorAll("a[href]")) {
     const m = (a.getAttribute("href") || "").match(/^\/([A-Za-z0-9._]+)\/?(\?.*)?$/);
-    if (!m || /^(explore|reels|reel|p|direct|accounts|stories)$/.test(m[1])) continue;
+    if (!m || /^(explore|reels|reel|p|direct|accounts|stories|notifications)$/.test(m[1])) continue;
     // The name or the avatar: on reels Instagram often links only the avatar picture.
     if (inside(a)) { handle = m[1]; break; }
   }
