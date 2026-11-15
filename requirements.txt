@@ -1,4 +1,8 @@
-fastapi>=0.115
-uvicorn[standard]>=0.30
-pydantic>=2.7
 c2pa-python>=0.38
+fastapi>=0.115
+imagehash>=4.3
+numpy>=1.26
+pdqhash>=0.2
+pydantic>=2.7
+python-multipart>=0.0.9
+uvicorn[standard]>=0.30

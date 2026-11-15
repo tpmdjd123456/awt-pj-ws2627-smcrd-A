@@ -7,6 +7,7 @@ venv/
 
 # local C2PA test material — never commit keys
 c2pa-test-certs/
+.c2pa-test-certs/
 *.pem
 *.key
 

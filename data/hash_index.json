@@ -1,0 +1,201 @@
+{
+ "version": 1,
+ "source": "data/dataset.csv",
+ "entries": [
+  {
+   "case_id": "case_01",
+   "event": "French student protests, autumn 2026",
+   "path": "data/media/case_01/original.jpg",
+   "earliest_date": "2015-06-23",
+   "earliest_source": "REUTERS / Vahram Baghdasaryan / Photolure",
+   "earliest_url": "https://www.reuters.com/news/picture/armenians-protest-energy-hike-idUSRTX1HRFU/",
+   "earliest_caption": "Protesters gesture as a riot police vehicle sprays a jet of water to disperse them in Yerevan, Armenia, June 23, 2015. The rally, in which 14 demonstrators and 11 police were injured, began on Monday, when about 5,000 people marched to the presidential headquarters.",
+   "pdq": "f05327d367fd5863910effc91612e214fcef059be93a30f70f4446e12118dd05",
+   "pdq_quality": 100,
+   "phash": "d3d00c4391f72f6c",
+   "dhash": "e0f04958d94b5b72",
+   "crop_resistant": [
+    "e0f0f0d14b58d9ca",
+    "1cc6f1f8fafebe3e",
+    "cffbffffdf9d9c18",
+    "0020020c191b0c38",
+    "d14958d9495b5272"
+   ]
+  },
+  {
+   "case_id": "case_02",
+   "event": "French student protests, autumn 2026",
+   "path": "data/media/case_02/original.jpg",
+   "earliest_date": "2016-06-18",
+   "earliest_source": "PA Images / Dominic Lipinski (via Alamy)",
+   "earliest_url": "https://www.alamy.com/stock-photo-protesters-holding-refugees-welcome-here-banners-near-the-french-embassy-106157016.html",
+   "earliest_caption": "Protesters holding 'Refugees welcome here' banners near the French embassy in Knightsbridge, London, demonstrate against the decision by French authorities to refuse entry to an aid convoy carrying supplies for refugees and migrants living in the Jungle camp in Calais.",
+   "pdq": "77fd4fc4b01e9efc1fb035bccee40fea4057fcb96673213428c88a7c501b5201",
+   "pdq_quality": 100,
+   "phash": "90c06cbf0996ef4e",
+   "dhash": "f3b5a5fc7b5a3cb5",
+   "crop_resistant": [
+    "e335edbdf7da7e25",
+    "1808cbc7e0f098cc",
+    "f3b5a5fc7b5a3cb5",
+    "0307070707070707",
+    "0d0d0f0b1b1b1b9f",
+    "070d0f1b13373e6f",
+    "94d09721f6cd67d6",
+    "ddd7bcbf430986a4",
+    "ac0ef552d9c882cb"
+   ]
+  },
+  {
+   "case_id": "case_03",
+   "event": "French student protests, autumn 2026",
+   "path": "data/media/case_03/original.jpg",
+   "earliest_date": "2026-09-29",
+   "earliest_source": "Guillaume Bonnaud via Picture Alliance",
+   "earliest_url": "https://search.picture-alliance.com/search/images(popup:image/493342510)",
+   "earliest_caption": "During the blockade in Bordeaux: an object explodes within a student \"barricade,\" and a firefighter catches fire.",
+   "pdq": "e19af5f172fe823fda8df1cfe542ea804091f06abdf31e9d0223f50cc0a415e2",
+   "pdq_quality": 100,
+   "phash": "94a39218eadc6f2b",
+   "dhash": "7cfc74b4bb343cbc",
+   "crop_resistant": [
+    "94d41cda52d8faf2",
+    "7272b2b2b0ac9a91",
+    "3584f2783c361616",
+    "e8eecedcdcfcfcf8",
+    "7cfc74b4bb343cbc"
+   ]
+  },
+  {
+   "case_id": "case_04",
+   "event": "US\u2013Iran strikes, July 2026",
+   "path": "data/media/case_04/original.jpg",
+   "earliest_date": "2025-06-15",
+   "earliest_source": "Stringer / Getty Images Europe",
+   "earliest_url": "https://www.gettyimages.de/detail/nachrichtenfoto/fire-and-smoke-rise-into-the-sky-after-an-israeli-nachrichtenfoto/2220221614",
+   "earliest_caption": "Iran Calls Israeli Strikes 'Declaration Of War' As Region Braces For Escalation. TEHRAN, IRAN - JUNE 15: Fire and smoke rise into the sky after an Israeli attack on the Shahran oil depot on June 15, 2025 in Tehran, Iran. Iran's foreign minister said the country would respond decisively and proportionally to a wave of attacks that Israel launched beginning in the early hours of June 13. The attacks targeted multiple military, scientific and residential locations, as well as senior government officials.",
+   "pdq": "6759a8761ccbd11bc33626c466c9d932cb76eed924b834e64a55cb19cc9b30c6",
+   "pdq_quality": 100,
+   "phash": "93b36c4cd5338e49",
+   "dhash": "ccdcd8d8f0e5f066",
+   "crop_resistant": [
+    "ed6d6cf6963ce882",
+    "ccdcd8d8f0e5f066"
+   ]
+  },
+  {
+   "case_id": "case_05",
+   "event": "Julius Malema sentencing hearing, East London, January 2026",
+   "path": "data/media/case_05/original.jpg",
+   "earliest_date": "2025-10-06",
+   "earliest_source": "qatarday",
+   "earliest_url": "https://www.instagram.com/p/DPdGRl3jAx6/?img_index=2",
+   "earliest_caption": "Tens of thousands of people have taken to the streets of Amsterdam as part of a massive \"Red Line\" protest, demanding that the Dutch government take stronger action against Israel's ongoing genocidal war in Gaza. According to the organisers, around 250,000 demonstrators participated in the protest on Sunday, making it one of the largest in the Netherlands in recent years, public broadcaster NOS reported. Dressed in red, protesters gathered at the Museumplein before marching through the capital to draw what they called a symbolic \"red line\" against the government's stance on Israel. Visit www.qatarday.com for more news and updates! #Netherlands #Amsterdam #Gaza #Palestine #RedLineProtest #QatarDayNews #QatarDay",
+   "pdq": "51542c756c87d39a3baa976a78116855a0dc9fbb0e8bb0ecef1c98662f1398a9",
+   "pdq_quality": 100,
+   "phash": "dacae4b11c0b68ee",
+   "dhash": "e1462171748849a0",
+   "crop_resistant": [
+    "71e0ccc7c6860004",
+    "217170e48a48c9a2"
+   ]
+  },
+  {
+   "case_id": "case_06",
+   "event": "INDIA bloc \u201cChalo Dilli\u201d rally, Delhi, 1 November 2026",
+   "path": "data/media/case_06/original.jpeg",
+   "earliest_date": "2019-02-04",
+   "earliest_source": "Peoples Dispatch",
+   "earliest_url": "https://peoplesdispatch.org/2019/02/04/million-strong-peoples-brigade-in-india-pledges-to-oust-right-wing-forces/",
+   "earliest_caption": "The million-strong gathering took an oath to remove the anti-people governments in the centre and the State.",
+   "pdq": "ded484121c5bffd90170060ebba1f6de50de2e01e7517c7c8d2503a1fb17e0cb",
+   "pdq_quality": 100,
+   "phash": "eb497442d29fc5c8",
+   "dhash": "83135371d1434bae",
+   "crop_resistant": [
+    "135371d1435b4f2e",
+    "289cdc782036f599",
+    "83c3c012131293c3",
+    "474a268f52b25c17",
+    "52e8283657745153",
+    "5d539b5571a46e9d",
+    "65453270457dd8c9"
+   ]
+  },
+  {
+   "case_id": "case_07",
+   "event": "Iran\u2013Israel tensions after the Damascus consulate strike, April 2024",
+   "path": "data/media/case_07/original.jpg",
+   "earliest_date": "2019-04-18",
+   "earliest_source": "EPA / Abedin Taherkenareh",
+   "earliest_url": "https://epaimages.com/search.pp?pictureid=7687223",
+   "earliest_caption": "National Army Day celebrations in Tehran: Iranian army trucks carrying missiles take part in celebrations marking Army Day in the capital Tehran, called on countries across the Middle East to unite against the United States -- amid rising tensions between the two countries following the US classification of the Iranian Revolutionary Guards as a terrorist organization.",
+   "pdq": "e0f9aa4659c5cb39233f25d2d0ca9e2e3dbc404562a0a3f1c057edd25bac92cf",
+   "pdq_quality": 100,
+   "phash": "a9f99a25f5c702d0",
+   "dhash": "4239991292e7e631",
+   "crop_resistant": [
+    "72534b131b399939",
+    "9e4ccc84cefcbcb4",
+    "e7f6e7e62d4070f1",
+    "19b9d33292f7e7e4"
+   ]
+  },
+  {
+   "case_id": "case_08",
+   "event": "Iranian missile strikes on US forces in Iraq, January 2020",
+   "path": "data/media/case_08/original.jpg",
+   "earliest_date": "2019-11-15",
+   "earliest_source": "AFP",
+   "earliest_url": "https://www.bbc.com/news/world-middle-east-50430783",
+   "earliest_caption": "Gaza was hit by more air strikes after rockets were fired at Israel",
+   "pdq": "731ce6c54e73712c9a8519bb652e8e676673e52e9993399ac64ca6633333418c",
+   "pdq_quality": 100,
+   "phash": "99986663993ce4ba",
+   "dhash": "f0f0f0f0f0f0f0f0",
+   "crop_resistant": [
+    "f0f0f0e0f0f0f0f0",
+    "f0f0f0f0f0f0f0f0"
+   ]
+  },
+  {
+   "case_id": "case_09",
+   "event": "Israel\u2013Gaza war, October 2023",
+   "path": "data/media/case_09/original.jpg",
+   "earliest_date": "2019-03-25",
+   "earliest_source": "Mahmud Hams / AFP",
+   "earliest_url": "https://www.afpforum.com/AFPForum/Search/ViewMedia.aspx?mui=3&hid=538911B70A5A4A4A013F24C19B7AF446DE83EFC11912DE502753FBA11082FF02&cck=a1aff2",
+   "earliest_caption": "Fire and smoke billow above buildings in Gaza City during reported Israeli strikes on March 25, 2019. Israel's military launched strikes on Hamas targets in the Gaza Strip today, the army and witnesses said, hours after a rocket from the Palestinian enclave hit a house and wounded seven Israelis.",
+   "pdq": "575b4cf7b90e1388f4908e5d09e3d4ae9b816a7274ee17b36272cc44b18770b9",
+   "pdq_quality": 100,
+   "phash": "8f4e7091a7e23b25",
+   "dhash": "30326165ebd1d027",
+   "crop_resistant": [
+    "d4f4f09ef9d1d1c1",
+    "db9f9e1490969791",
+    "c0e5dbbb78f9d3b3",
+    "30326165ebd1d027"
+   ]
+  },
+  {
+   "case_id": "case_10",
+   "event": "Russian invasion of Ukraine, February 2022",
+   "path": "data/media/case_10/original.jpg",
+   "earliest_date": "2022-02-24",
+   "earliest_source": " Wolfgang Schwan / Anadolu Agency via Getty Images",
+   "earliest_url": "https://www.gettyimages.de/detail/nachrichtenfoto/wounded-woman-named-locally-as-olena-kurilo-is-seen-nachrichtenfoto/1238718222",
+   "earliest_caption": "\nAirstrikes hit Kharkiv, Ukraine KHARKIV, UKRAINE - FEBRUARY 24: (EDITORS NOTE: Image depicts graphic content) A wounded woman, named locally as Olena Kurilo, is seen after an airstrike damages an apartment complex outside of Kharkiv, Ukraine on February 24, 2022.",
+   "pdq": "06e246d8c19342b760f70dff0cf97e6cfc61fc054c52b873a4e3b68ed2584b81",
+   "pdq_quality": 100,
+   "phash": "d9c08fb8e36725d0",
+   "dhash": "9ab888459530387a",
+   "crop_resistant": [
+    "cab279884c419995",
+    "fefefefce4f1871e",
+    "465f0b8f8f8eee3e",
+    "b2b8cc11153a387a",
+    "f3730dfef7e3c37c"
+   ]
+  }
+ ]
+}

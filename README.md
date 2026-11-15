@@ -60,20 +60,33 @@ rather than breaking the tool.
 
 ```bash
 pip install -r requirements.txt
+python tools/build_hash_index.py        # once, and again after the dataset changes
 uvicorn service.main:app --reload --port 8000
 ```
 
+Two ways in:
+
 ```bash
 curl -s localhost:8000/health
+
+# JSON — the service downloads the media itself
 curl -s -X POST localhost:8000/verify \
      -H 'content-type: application/json' \
      -d '{"media_url": "https://example.social/media/abc.jpg"}'
+
+# multipart — the caller sends the bytes
+curl -s -X POST localhost:8000/verify/file -F file=@some-image.jpg
 ```
 
-`POST /verify` is a stub — it returns a hardcoded example regardless of input,
-so the extension can be built against the real shape before the probes exist.
-Add `?empty=true` for the no-evidence response, which the panel also has to
-handle.
+`POST /verify/file` exists because downloading is the fragile part: Instagram
+and TikTok CDN URLs expire, video is served as `blob:` streams the service
+cannot fetch at all, and some hosts refuse unauthenticated requests. The
+extension already holds the bytes, so handing them over skips all of that.
+**Use it for the demo.**
+
+The C2PA and perceptual-hash probes are live. Reverse search and fact-check
+lookup are not built, so they are listed in `probes_failed` rather than quietly
+left out — the panel can then say which evidence was actually looked for.
 
 Interactive schema: <http://localhost:8000/docs> · contract: [`docs/api.md`](docs/api.md)
 
@@ -102,6 +115,30 @@ the CLI.
 Regenerate the signed fixture with `python tools/make_test_fixture.py <in> <out>`.
 It uses the public c2pa-rs test certificates and documents the two traps that
 cost an afternoon.
+
+### Perceptual hash probe
+
+```bash
+python tools/build_hash_index.py                       # hash every original in the dataset
+python -m service.probes.phash_probe some-image.jpg    # query it
+python tools/evaluate_hashing.py                       # recall and false-positive test
+```
+
+Three hashes, because they fail in different places: **PDQ** (Meta's 256-bit
+hash, what platforms actually run), **pHash** (the 64-bit academic baseline),
+and **crop-resistant hashing** (per-segment, slow, so it only runs when the
+fast hashes find nothing).
+
+The index is keyed on `local_path_original`, not `earliest_url` — the CDN URLs
+in the dataset carry expiry timestamps, so the committed media files are the
+durable copy.
+
+**Measured result: 4 of 10 cases recovered, 0 false positives in 90
+non-matching comparisons.** Eight of our ten reused images have a different
+aspect ratio from their original, which means they were reframed rather than
+resized, and a global hash cannot survive that. This is the empirical reason
+the pipeline needs more than a hash index — thresholds, measurements and what
+to do about it: [`docs/findings-hashing.md`](docs/findings-hashing.md).
 
 ## Team
 

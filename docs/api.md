@@ -152,10 +152,44 @@ itself was malformed.
 
 ---
 
+## `POST /verify/file`
+
+Same response, different input: a multipart upload instead of a URL.
+
+```bash
+curl -s -X POST localhost:8000/verify/file -F file=@image.jpg
+```
+
+Added because downloading is the fragile part of `/verify`. Instagram and
+TikTok CDN URLs expire, video is served as `blob:` streams the service cannot
+fetch at all, and some hosts refuse unauthenticated requests. The extension
+already holds the bytes.
+
+**The demo should use this endpoint.** `/verify` stays for cases where only a
+URL is available, and for testing against public images.
+
+If a download fails, `/verify` does not error. It returns `no_evidence` with
+every probe in `probes_failed`, which is the honest answer: we could not look,
+so we found nothing. The panel must not render that as "nothing found".
+
+---
+
 ## Status
 
-Implemented as a **stub**: `POST /verify` currently returns the hardcoded
-example above regardless of input. Field names and shape are real. Probes are
-wired in from week 2 onward.
+| Probe | State |
+| --- | --- |
+| `c2pa` | live — reads Content Credentials, validates the signature |
+| `phash` | live — PDQ, pHash and crop-resistant matching against `data/hash_index.json` |
+| `reverse_search` | not built — always in `probes_failed` |
+| `factcheck` | not built — always in `probes_failed` |
+
+`attested_context` is currently **always `null`**, on every path. A hash match
+tells us *where* media appeared, never *what it shows*, so it cannot fill that
+field (see [`terminology.md`](terminology.md)). It gets filled once the
+fact-check probe exists, or from a C2PA manifest that carries a caption.
+
+`earliest_known_appearance` is real whenever `phash` fires, and limited to our
+own 10-case index until reverse search is wired in. Recall on that index is
+4/10: [`findings-hashing.md`](findings-hashing.md).
 
 Interactive schema while the service is running: `http://localhost:8000/docs`
