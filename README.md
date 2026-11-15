@@ -40,6 +40,13 @@ copy we find may not be the original, and may itself carry a false claim.
 Full decision, with the date fields and what it changes in the schema and API:
 [`docs/terminology.md`](docs/terminology.md).
 
+## Scope
+
+The French student protests of autumn 2026 are the motivating case study. The
+evaluation corpus is deliberately **cross-event**, so results show whether the
+system generalises rather than whether it was tuned to one event's
+transformation patterns: [`docs/scope.md`](docs/scope.md).
+
 ## Pipeline
 
 ```
