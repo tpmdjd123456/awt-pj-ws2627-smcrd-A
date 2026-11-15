@@ -10,5 +10,4 @@ c2pa-test-certs/
 *.pem
 *.key
 
-data/media/
 .DS_Store
