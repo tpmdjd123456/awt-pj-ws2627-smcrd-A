@@ -5,12 +5,21 @@ Three hashes, because they fail in different places (see docs/findings-hashing.m
   PDQ               Meta's 256-bit hash, what platforms actually run. Very precise:
                     on our corpus, true pairs score 10-14 and unrelated images
                     never go below 104. Catches resizes and re-encodes.
+                    Compared under all 8 dihedral orientations, so a mirrored
+                    or rotated copy still matches — see the note below.
   pHash             64-bit DCT hash, the academic baseline. Slightly more
                     sensitive than PDQ, with a much thinner safety margin.
   crop-resistant    Segments the image and hashes each segment. Recovers one
                     case the global hashes miss, with no false positives, but
                     it is slow — so it only runs when the fast hashes find
                     nothing.
+
+Orientation: a horizontally flipped copy is a real reuse pattern and plain PDQ
+is blind to it — on the mirrored variants in data/transformed/ it scored 124 to
+132, indistinguishable from unrelated images, and recovered 1 of 10. Comparing
+all 8 dihedral orientations recovers 10 of 10 at distances of 0 to 24. The
+matched orientation is reported, because "this is the original, mirrored" is
+different evidence from "this is the original".
 
 None of them survive a heavy crop or an AI edit. That is measured, not assumed,
 and it is the empirical reason the pipeline needs more than a hash index.
@@ -43,9 +52,25 @@ INDEX_PATH = Path("data/hash_index.json")
 # original compared against every other original. See docs/findings-hashing.md
 # for the measurements these come from. Re-derive them when the dataset grows.
 PDQ_STRONG = 31          # Meta's own guidance; our unrelated floor is 104
-PHASH_CANDIDATE = 18     # 20 produced a false positive at exactly the threshold
+PHASH_CANDIDATE = 18     # 20 false-positived; 18 is safe once weak leads are
+                         # suppressed in the presence of a strong match (below)
 CROP_SEGMENT_DIST = 16   # max per-segment distance for a crop-resistant match
 CROP_MIN_SEGMENTS = 2    # one matched segment is a coincidence — it false-positived
+
+# pdqhash.compute_dihedral returns 8 hashes in a fixed order. These labels say
+# how the QUERY differs from the indexed original when that slot is the match,
+# which is the inverse of the transform the slot itself represents. Verified
+# against explicitly transformed images; see docs/findings-hashing.md.
+PDQ_ORIENTATIONS = (
+    "identity",
+    "rotated_270",
+    "rotated_180",
+    "rotated_90",
+    "flipped_vertical",
+    "mirrored",
+    "transposed",
+    "transverse",
+)
 
 
 # --- hashing --------------------------------------------------------------
@@ -54,6 +79,25 @@ CROP_MIN_SEGMENTS = 2    # one matched segment is a coincidence — it false-pos
 def _pdq_bits(img: Image.Image) -> tuple[np.ndarray, int]:
     bits, quality = pdqhash.compute(np.asarray(img.convert("RGB")))
     return np.array(bits, dtype=np.uint8), int(quality)
+
+
+def _pdq_dihedral(img: Image.Image) -> list[np.ndarray]:
+    """All 8 orientations of the PDQ hash, in PDQ_ORIENTATIONS order.
+
+    Costs about the same as one `compute` (3.5 ms vs 3.2 ms) — the transform is
+    applied to the DCT coefficients, not by re-hashing rotated images.
+    """
+    variants, _ = pdqhash.compute_dihedral(np.asarray(img.convert("RGB")))
+    return [np.array(v, dtype=np.uint8) for v in variants]
+
+
+def pdq_best_orientation(
+    query_variants: list[np.ndarray], target: np.ndarray
+) -> tuple[int, str]:
+    """Smallest distance between any orientation of the query and the target."""
+    dists = [int(np.count_nonzero(v != target)) for v in query_variants]
+    best = int(np.argmin(dists))
+    return dists[best], PDQ_ORIENTATIONS[best]
 
 
 def _pdq_hex(bits: np.ndarray) -> str:
@@ -147,12 +191,13 @@ def query_bytes(data: bytes, index: dict[str, Any] | None = None) -> list[dict[s
 
     with Image.open(io.BytesIO(data)) as img:
         q = hash_image(img, include_crop_resistant=False)
+        q_dihedral = _pdq_dihedral(img)
 
-    q_pdq = _pdq_from_hex(q["pdq"])
     q_phash = imagehash.hex_to_hash(q["phash"])
 
     results = []
     for e in index["entries"]:
+        dist, orientation = pdq_best_orientation(q_dihedral, _pdq_from_hex(e["pdq"]))
         results.append(
             {
                 "case_id": e["case_id"],
@@ -160,7 +205,8 @@ def query_bytes(data: bytes, index: dict[str, Any] | None = None) -> list[dict[s
                 "source": e["earliest_source"],
                 "url": e["earliest_url"],
                 "caption": e["earliest_caption"],
-                "pdq_distance": pdq_distance(q_pdq, _pdq_from_hex(e["pdq"])),
+                "pdq_distance": dist,
+                "pdq_orientation": orientation,
                 "phash_distance": int(q_phash - imagehash.hex_to_hash(e["phash"])),
                 "crop_segments_matched": None,
                 "crop_distance": None,
@@ -178,26 +224,51 @@ def query_bytes(data: bytes, index: dict[str, Any] | None = None) -> list[dict[s
             r["crop_distance"] = int(dist)
 
     for r in results:
-        r["match_strength"] = _strength(r)
+        r["match_strength"], r["match_method"], r["match_distance"] = _strength(r)
+        # The orientation is only meaningful when PDQ is what matched. On a
+        # crop-resistant or pHash match the PDQ distance is 114+, and its
+        # argmin over 8 orientations is noise — reporting "rotated 270" there
+        # would be inventing evidence.
+        if r["pdq_distance"] > PDQ_STRONG:
+            r["pdq_orientation"] = None
+
+    # A candidate is a weak lead. When something matched strongly, the weak
+    # leads are noise, and one of them was our only false positive across 150
+    # variants. When nothing matched strongly, a candidate is all we have, so
+    # it stands. A genuine second appearance of the same image scores strong,
+    # not candidate, so this does not hide real duplicates.
+    if any(r["match_strength"] == "strong" for r in results):
+        for r in results:
+            if r["match_strength"] == "candidate":
+                r["match_strength"] = "none"
+                r["match_method"] = None
+                r["match_distance"] = None
 
     order = {"strong": 0, "candidate": 1, "none": 2}
     results.sort(key=lambda r: (order[r["match_strength"]], r["pdq_distance"]))
     return results
 
 
-def _strength(r: dict[str, Any]) -> str:
+def _strength(r: dict[str, Any]) -> tuple[str, str | None, int | None]:
+    """(strength, which measure decided, that measure's distance).
+
+    The deciding measure matters for reporting. A crop-resistant match can sit
+    at PDQ 118 while its segment distance is 6 — showing the 118 next to
+    "strong match" reads like a bug, because the two numbers are on different
+    scales and only one of them decided anything.
+    """
     if r["pdq_distance"] <= PDQ_STRONG:
-        return "strong"
+        return "strong", "pdq", r["pdq_distance"]
     if (
         r["crop_segments_matched"]
         and r["crop_segments_matched"] >= CROP_MIN_SEGMENTS
         and r["crop_distance"] is not None
         and r["crop_distance"] <= CROP_SEGMENT_DIST
     ):
-        return "strong"
+        return "strong", "crop_segments", r["crop_distance"]
     if r["phash_distance"] <= PHASH_CANDIDATE:
-        return "candidate"
-    return "none"
+        return "candidate", "phash", r["phash_distance"]
+    return "none", None, None
 
 
 def best_match(data: bytes, index: dict[str, Any] | None = None) -> dict[str, Any] | None:
@@ -222,19 +293,29 @@ def _main(argv: list[str]) -> int:
 
     results = query_bytes(path.read_bytes())
     print(f"{path}: {len(results)} index entries compared\n")
-    print(f"{'case':9} {'strength':10} {'PDQ':>5} {'pHash':>6} {'cropSeg':>8} {'cropDist':>9}")
-    print("-" * 56)
+    print(
+        f"{'case':9} {'strength':10} {'PDQ':>5} {'orientation':>17} {'pHash':>6} "
+        f"{'cropSeg':>8} {'cropDist':>9}"
+    )
+    print("-" * 74)
     for r in results[:8]:
         cs = "-" if r["crop_segments_matched"] is None else r["crop_segments_matched"]
         cd = "-" if r["crop_distance"] is None else r["crop_distance"]
         print(
             f"{r['case_id']:9} {r['match_strength']:10} {r['pdq_distance']:5} "
-            f"{r['phash_distance']:6} {str(cs):>8} {str(cd):>9}"
+            f"{r['pdq_orientation']:>17} {r['phash_distance']:6} {str(cs):>8} {str(cd):>9}"
         )
     best = next((r for r in results if r["match_strength"] != "none"), None)
     print()
     if best:
-        print(f"best: {best['case_id']} — {best['date']} · {best['source']} ({best['match_strength']})")
+        turned = (
+            "" if best["pdq_orientation"] == "identity"
+            else f" — {best['pdq_orientation'].replace('_', ' ')}"
+        )
+        print(
+            f"best: {best['case_id']} — {best['date']} · {best['source']} "
+            f"({best['match_strength']}){turned}"
+        )
     else:
         print("no match above threshold — the panel reports this as no_evidence")
     return 0

@@ -114,7 +114,13 @@ def run_probes(data: bytes, mime: str = "image/jpeg") -> VerifyResponse:
                         url=r["url"] or None,
                         caption=r["caption"] or None,
                         evidence_type=EvidenceType.hash_match,
-                        distance=r["pdq_distance"],
+                        distance=r["match_distance"],
+                        method=r["match_method"],
+                        orientation=(
+                            None
+                            if r.get("pdq_orientation") in (None, "identity")
+                            else r["pdq_orientation"]
+                        ),
                     )
                 )
             best = next((r for r in results if r["match_strength"] != "none"), None)

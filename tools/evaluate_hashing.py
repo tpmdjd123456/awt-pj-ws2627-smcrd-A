@@ -80,12 +80,28 @@ print(f"  {total_wrong} false positives in {n_cmp} non-matching comparisons")
 
 print()
 print("=== baseline: every original vs every other original (untransformed)")
+print("    PDQ compared under all 8 orientations, the same way a query is scored —")
+print("    taking a minimum over 8 hashes is 8 chances to collide, not 1.")
 worst_pdq = worst_phash = None
 import imagehash  # noqa: E402
-from service.probes.phash_probe import _pdq_from_hex, pdq_distance  # noqa: E402
+from PIL import Image  # noqa: E402
+
+from service.probes.phash_probe import (  # noqa: E402
+    _pdq_dihedral,
+    _pdq_from_hex,
+    pdq_best_orientation,
+)
+
+dihedral_of = {}
+for cid, e in by_id.items():
+    with Image.open(e["path"]) as img:
+        dihedral_of[cid] = _pdq_dihedral(img)
 
 for a, b in itertools.combinations(by_id, 2):
-    pd = pdq_distance(_pdq_from_hex(by_id[a]["pdq"]), _pdq_from_hex(by_id[b]["pdq"]))
+    # both directions, since min-over-orientations is not symmetric in general
+    pd_ab, _ = pdq_best_orientation(dihedral_of[a], _pdq_from_hex(by_id[b]["pdq"]))
+    pd_ba, _ = pdq_best_orientation(dihedral_of[b], _pdq_from_hex(by_id[a]["pdq"]))
+    pd = min(pd_ab, pd_ba)
     ph = int(imagehash.hex_to_hash(by_id[a]["phash"]) - imagehash.hex_to_hash(by_id[b]["phash"]))
     worst_pdq = pd if worst_pdq is None else min(worst_pdq, pd)
     worst_phash = ph if worst_phash is None else min(worst_phash, ph)

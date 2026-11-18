@@ -121,24 +121,40 @@ cost an afternoon.
 ```bash
 python tools/build_hash_index.py                       # hash every original in the dataset
 python -m service.probes.phash_probe some-image.jpg    # query it
-python tools/evaluate_hashing.py                       # recall and false-positive test
+python tools/evaluate_hashing.py                       # real pairs: recall + false positives
+python tools/evaluate_transformations.py               # synthetic set: survival per transformation
 ```
 
 Three hashes, because they fail in different places: **PDQ** (Meta's 256-bit
-hash, what platforms actually run), **pHash** (the 64-bit academic baseline),
-and **crop-resistant hashing** (per-segment, slow, so it only runs when the
-fast hashes find nothing).
+hash, what platforms actually run, compared under all 8 orientations so a
+mirrored copy still matches), **pHash** (the 64-bit academic baseline), and
+**crop-resistant hashing** (per-segment, slow, so it only runs when the fast
+hashes find nothing).
 
 The index is keyed on `local_path_original`, not `earliest_url` — the CDN URLs
 in the dataset carry expiry timestamps, so the committed media files are the
 durable copy.
 
-**Measured result: 4 of 10 cases recovered, 0 false positives in 90
-non-matching comparisons.** Eight of our ten reused images have a different
-aspect ratio from their original, which means they were reframed rather than
-resized, and a global hash cannot survive that. This is the empirical reason
-the pipeline needs more than a hash index — thresholds, measurements and what
-to do about it: [`docs/findings-hashing.md`](docs/findings-hashing.md).
+### Measured results
+
+| | real reuse (10 cases) | synthetic variants (150) |
+| --- | --- | --- |
+| recall | **4/10 (40%)** | **133/150 (89%)** |
+| false positives | 0 in 90 | 0 in 1,350 |
+
+Both are correct, and the gap is the finding. Compression, resizing,
+screenshots, watermarks, text overlays and mirroring are all recovered 10/10.
+Cropping is the break-point: full recall at 10%, 8/10 at 20%, then collapse —
+3/10 at 30%.
+
+The synthetic crops are centred and preserve aspect ratio, but **8 of the 10
+real reused copies changed aspect ratio** — reframed by hand rather than
+resized — and hashing finds only 1 of 5 real crops. So the synthetic curve
+locates break-points well and **overstates real-world recall**. Quote both
+numbers, not one.
+
+Thresholds, the measurements behind them, the mirroring blind spot and what to
+do about crops: [`docs/findings-hashing.md`](docs/findings-hashing.md).
 
 ## Team
 

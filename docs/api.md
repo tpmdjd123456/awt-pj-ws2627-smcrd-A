@@ -50,7 +50,9 @@ reuse.
     "url":           "https://www.reuters.com/world/europe/...",
     "caption":       "Clashes between police and protesters in Angers",
     "evidence_type": "hash_match",
-    "distance":      4
+    "distance":      4,
+    "method":        "pdq",
+    "orientation":   null
   },
 
   "candidates": [
@@ -60,7 +62,9 @@ reuse.
       "url":           "https://x.com/someone/status/...",
       "caption":       null,
       "evidence_type": "reverse_search",
-      "distance":      null
+      "distance":      null,
+      "method":        null,
+      "orientation":   null
     }
   ],
 
@@ -152,6 +156,23 @@ itself was malformed.
 
 ---
 
+## Two added fields on an appearance (18 Nov)
+
+Both optional and nullable, so existing panel code is unaffected.
+
+| Field | Values | Why |
+| --- | --- | --- |
+| `method` | `pdq` · `crop_segments` · `phash` · `null` | Which measure produced the match. `distance` belongs to *that* measure, and the scales differ — a crop-resistant match can sit at PDQ 118 while its segment distance is 6, so showing a distance without its method is unreadable. |
+| `orientation` | `mirrored` · `rotated_90` · `rotated_180` · `rotated_270` · `flipped_vertical` · `transposed` · `transverse` · `null` | How the queried media differs in orientation from this appearance. `null` means same orientation, or that PDQ was not the matching measure. |
+
+**Worth surfacing in the panel.** A mirrored copy is not pixel-identical, so a
+user comparing the two images sees a difference; saying "this is the earliest
+copy, mirrored" explains it instead of looking like a mistake. Mirroring is a
+real reuse pattern — before this was handled, plain PDQ scored 124–132 on
+mirrored copies, indistinguishable from unrelated images.
+
+---
+
 ## `POST /verify/file`
 
 Same response, different input: a multipart upload instead of a URL.
@@ -179,7 +200,7 @@ so we found nothing. The panel must not render that as "nothing found".
 | Probe | State |
 | --- | --- |
 | `c2pa` | live — reads Content Credentials, validates the signature |
-| `phash` | live — PDQ, pHash and crop-resistant matching against `data/hash_index.json` |
+| `phash` | live — PDQ (all 8 orientations), pHash and crop-resistant matching against `data/hash_index.json` |
 | `reverse_search` | not built — always in `probes_failed` |
 | `factcheck` | not built — always in `probes_failed` |
 
@@ -189,7 +210,13 @@ field (see [`terminology.md`](terminology.md)). It gets filled once the
 fact-check probe exists, or from a C2PA manifest that carries a caption.
 
 `earliest_known_appearance` is real whenever `phash` fires, and limited to our
-own 10-case index until reverse search is wired in. Recall on that index is
-4/10: [`findings-hashing.md`](findings-hashing.md).
+own 10-case index until reverse search is wired in. Recall is **4/10 on real
+reuse** and **133/150 on synthetic transformations** — both correct, measuring
+different things: [`findings-hashing.md`](findings-hashing.md).
+
+For the panel, the practical consequence is that **`no_evidence` is a common
+answer, not an error state.** It needs to read as "we looked and found nothing",
+not as a failure, and it must never read as "nothing found, so the post is
+fine".
 
 Interactive schema while the service is running: `http://localhost:8000/docs`

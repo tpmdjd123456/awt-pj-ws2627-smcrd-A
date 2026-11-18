@@ -63,7 +63,30 @@ class Appearance(BaseModel):
     caption: str | None = None
     evidence_type: EvidenceType
     distance: int | None = Field(
-        None, description="Perceptual hash distance, when evidence_type is hash_match"
+        None,
+        description=(
+            "Distance from the measure named in `method`, when evidence_type is "
+            "hash_match. Read it together with `method`: the scales differ, so a "
+            "distance is only interpretable once you know which hash produced it."
+        ),
+    )
+    method: str | None = Field(
+        None,
+        description=(
+            "Which measure produced the match: 'pdq' (strong under 31), "
+            "'crop_segments' (crop-resistant segment hashing, strong under 16), "
+            "or 'phash' (candidate under 18)."
+        ),
+    )
+    orientation: str | None = Field(
+        None,
+        description=(
+            "How the queried media differs in orientation from this appearance "
+            "— 'mirrored', 'rotated_90', and so on. Null when it is the same "
+            "orientation, or when the match did not come from PDQ. Worth "
+            "surfacing: a mirrored copy is not pixel-identical, and saying so "
+            "explains why."
+        ),
     )
 
 
