@@ -199,3 +199,303 @@ case_10,data/media/case_10/original.jpg,data/transformed/case_10/mirror_h.jpg,mi
 case_10,data/media/case_10/original.jpg,data/transformed/case_10/text_overlay_bar.jpg,text_overlay,bar,"{""style"": ""caption_bar"", ""bar_height_pct"": 14, ""text"": ""BREAKING: Happening right now""}",95,1616,1080,1616,1080
 case_10,data/media/case_10/original.jpg,data/transformed/case_10/text_overlay_meme.jpg,text_overlay,meme,"{""style"": ""meme_block"", ""text_top"": ""This is happening right now"", ""text_bottom"": ""They don't want you to see this""}",95,1616,1080,1616,1080
 case_10,data/media/case_10/original.jpg,data/transformed/case_10/logo_corner.jpg,logo,corner,"{""position"": ""bottom_right"", ""width_px"": 324}",95,1616,1080,1616,1080
+case_11,data/media/case_11/original.jpg,data/transformed/case_11/none_original.jpg,none,original,{},95,2048,1366,2048,1366
+case_11,data/media/case_11/original.jpg,data/transformed/case_11/crop_5.jpg,crop,5,"{""percent"": 5, ""mode"": ""total"", ""box"": [51, 34, 1997, 1332]}",95,2048,1366,1946,1298
+case_11,data/media/case_11/original.jpg,data/transformed/case_11/crop_10.jpg,crop,10,"{""percent"": 10, ""mode"": ""total"", ""box"": [102, 68, 1946, 1298]}",95,2048,1366,1844,1230
+case_11,data/media/case_11/original.jpg,data/transformed/case_11/crop_20.jpg,crop,20,"{""percent"": 20, ""mode"": ""total"", ""box"": [204, 136, 1844, 1230]}",95,2048,1366,1640,1094
+case_11,data/media/case_11/original.jpg,data/transformed/case_11/crop_30.jpg,crop,30,"{""percent"": 30, ""mode"": ""total"", ""box"": [307, 204, 1741, 1162]}",95,2048,1366,1434,958
+case_11,data/media/case_11/original.jpg,data/transformed/case_11/crop_40.jpg,crop,40,"{""percent"": 40, ""mode"": ""total"", ""box"": [409, 273, 1639, 1093]}",95,2048,1366,1230,820
+case_11,data/media/case_11/original.jpg,data/transformed/case_11/crop_offcentre_left67.jpg,crop_offcentre,left67,"{""side"": ""left"", ""kept_percent"": 67, ""box"": [0, 0, 1372, 1366], ""aspect_ratio_changed"": true}",95,2048,1366,1372,1366
+case_11,data/media/case_11/original.jpg,data/transformed/case_11/crop_offcentre_right67.jpg,crop_offcentre,right67,"{""side"": ""right"", ""kept_percent"": 67, ""box"": [676, 0, 2048, 1366], ""aspect_ratio_changed"": true}",95,2048,1366,1372,1366
+case_11,data/media/case_11/original.jpg,data/transformed/case_11/crop_offcentre_top67.jpg,crop_offcentre,top67,"{""side"": ""top"", ""kept_percent"": 67, ""box"": [0, 0, 2048, 915], ""aspect_ratio_changed"": true}",95,2048,1366,2048,915
+case_11,data/media/case_11/original.jpg,data/transformed/case_11/crop_offcentre_bottom67.jpg,crop_offcentre,bottom67,"{""side"": ""bottom"", ""kept_percent"": 67, ""box"": [0, 451, 2048, 1366], ""aspect_ratio_changed"": true}",95,2048,1366,2048,915
+case_11,data/media/case_11/original.jpg,data/transformed/case_11/resize_50.jpg,resize,50,"{""percent"": 50}",95,2048,1366,1024,683
+case_11,data/media/case_11/original.jpg,data/transformed/case_11/resize_25.jpg,resize,25,"{""percent"": 25}",95,2048,1366,512,342
+case_11,data/media/case_11/original.jpg,data/transformed/case_11/re_encode_q90.jpg,re_encode,q90,"{""jpeg_quality"": 90}",90,2048,1366,2048,1366
+case_11,data/media/case_11/original.jpg,data/transformed/case_11/re_encode_q70.jpg,re_encode,q70,"{""jpeg_quality"": 70}",70,2048,1366,2048,1366
+case_11,data/media/case_11/original.jpg,data/transformed/case_11/re_encode_q50.jpg,re_encode,q50,"{""jpeg_quality"": 50}",50,2048,1366,2048,1366
+case_11,data/media/case_11/original.jpg,data/transformed/case_11/screenshot_s90q75.jpg,screenshot,s90q75,"{""scale"": 0.9, ""jpeg_quality"": 75}",75,2048,1366,1843,1229
+case_11,data/media/case_11/original.jpg,data/transformed/case_11/mirror_h.jpg,mirror,h,"{""axis"": ""horizontal""}",95,2048,1366,2048,1366
+case_11,data/media/case_11/original.jpg,data/transformed/case_11/text_overlay_bar.jpg,text_overlay,bar,"{""style"": ""caption_bar"", ""bar_height_pct"": 14, ""text"": ""BREAKING: Happening right now""}",95,2048,1366,2048,1366
+case_11,data/media/case_11/original.jpg,data/transformed/case_11/text_overlay_meme.jpg,text_overlay,meme,"{""style"": ""meme_block"", ""text_top"": ""This is happening right now"", ""text_bottom"": ""They don't want you to see this""}",95,2048,1366,2048,1366
+case_11,data/media/case_11/original.jpg,data/transformed/case_11/logo_corner.jpg,logo,corner,"{""position"": ""bottom_right"", ""width_px"": 409}",95,2048,1366,2048,1366
+case_12,data/media/case_12/original.jpg,data/transformed/case_12/none_original.jpg,none,original,{},95,2048,1365,2048,1365
+case_12,data/media/case_12/original.jpg,data/transformed/case_12/crop_5.jpg,crop,5,"{""percent"": 5, ""mode"": ""total"", ""box"": [51, 34, 1997, 1331]}",95,2048,1365,1946,1297
+case_12,data/media/case_12/original.jpg,data/transformed/case_12/crop_10.jpg,crop,10,"{""percent"": 10, ""mode"": ""total"", ""box"": [102, 68, 1946, 1297]}",95,2048,1365,1844,1229
+case_12,data/media/case_12/original.jpg,data/transformed/case_12/crop_20.jpg,crop,20,"{""percent"": 20, ""mode"": ""total"", ""box"": [204, 136, 1844, 1229]}",95,2048,1365,1640,1093
+case_12,data/media/case_12/original.jpg,data/transformed/case_12/crop_30.jpg,crop,30,"{""percent"": 30, ""mode"": ""total"", ""box"": [307, 204, 1741, 1161]}",95,2048,1365,1434,957
+case_12,data/media/case_12/original.jpg,data/transformed/case_12/crop_40.jpg,crop,40,"{""percent"": 40, ""mode"": ""total"", ""box"": [409, 273, 1639, 1092]}",95,2048,1365,1230,819
+case_12,data/media/case_12/original.jpg,data/transformed/case_12/crop_offcentre_left67.jpg,crop_offcentre,left67,"{""side"": ""left"", ""kept_percent"": 67, ""box"": [0, 0, 1372, 1365], ""aspect_ratio_changed"": true}",95,2048,1365,1372,1365
+case_12,data/media/case_12/original.jpg,data/transformed/case_12/crop_offcentre_right67.jpg,crop_offcentre,right67,"{""side"": ""right"", ""kept_percent"": 67, ""box"": [676, 0, 2048, 1365], ""aspect_ratio_changed"": true}",95,2048,1365,1372,1365
+case_12,data/media/case_12/original.jpg,data/transformed/case_12/crop_offcentre_top67.jpg,crop_offcentre,top67,"{""side"": ""top"", ""kept_percent"": 67, ""box"": [0, 0, 2048, 915], ""aspect_ratio_changed"": true}",95,2048,1365,2048,915
+case_12,data/media/case_12/original.jpg,data/transformed/case_12/crop_offcentre_bottom67.jpg,crop_offcentre,bottom67,"{""side"": ""bottom"", ""kept_percent"": 67, ""box"": [0, 450, 2048, 1365], ""aspect_ratio_changed"": true}",95,2048,1365,2048,915
+case_12,data/media/case_12/original.jpg,data/transformed/case_12/resize_50.jpg,resize,50,"{""percent"": 50}",95,2048,1365,1024,682
+case_12,data/media/case_12/original.jpg,data/transformed/case_12/resize_25.jpg,resize,25,"{""percent"": 25}",95,2048,1365,512,341
+case_12,data/media/case_12/original.jpg,data/transformed/case_12/re_encode_q90.jpg,re_encode,q90,"{""jpeg_quality"": 90}",90,2048,1365,2048,1365
+case_12,data/media/case_12/original.jpg,data/transformed/case_12/re_encode_q70.jpg,re_encode,q70,"{""jpeg_quality"": 70}",70,2048,1365,2048,1365
+case_12,data/media/case_12/original.jpg,data/transformed/case_12/re_encode_q50.jpg,re_encode,q50,"{""jpeg_quality"": 50}",50,2048,1365,2048,1365
+case_12,data/media/case_12/original.jpg,data/transformed/case_12/screenshot_s90q75.jpg,screenshot,s90q75,"{""scale"": 0.9, ""jpeg_quality"": 75}",75,2048,1365,1843,1228
+case_12,data/media/case_12/original.jpg,data/transformed/case_12/mirror_h.jpg,mirror,h,"{""axis"": ""horizontal""}",95,2048,1365,2048,1365
+case_12,data/media/case_12/original.jpg,data/transformed/case_12/text_overlay_bar.jpg,text_overlay,bar,"{""style"": ""caption_bar"", ""bar_height_pct"": 14, ""text"": ""BREAKING: Happening right now""}",95,2048,1365,2048,1365
+case_12,data/media/case_12/original.jpg,data/transformed/case_12/text_overlay_meme.jpg,text_overlay,meme,"{""style"": ""meme_block"", ""text_top"": ""This is happening right now"", ""text_bottom"": ""They don't want you to see this""}",95,2048,1365,2048,1365
+case_12,data/media/case_12/original.jpg,data/transformed/case_12/logo_corner.jpg,logo,corner,"{""position"": ""bottom_right"", ""width_px"": 409}",95,2048,1365,2048,1365
+case_13,data/media/case_13/original.jpg,data/transformed/case_13/none_original.jpg,none,original,{},95,2880,1920,2880,1920
+case_13,data/media/case_13/original.jpg,data/transformed/case_13/crop_5.jpg,crop,5,"{""percent"": 5, ""mode"": ""total"", ""box"": [72, 48, 2808, 1872]}",95,2880,1920,2736,1824
+case_13,data/media/case_13/original.jpg,data/transformed/case_13/crop_10.jpg,crop,10,"{""percent"": 10, ""mode"": ""total"", ""box"": [144, 96, 2736, 1824]}",95,2880,1920,2592,1728
+case_13,data/media/case_13/original.jpg,data/transformed/case_13/crop_20.jpg,crop,20,"{""percent"": 20, ""mode"": ""total"", ""box"": [288, 192, 2592, 1728]}",95,2880,1920,2304,1536
+case_13,data/media/case_13/original.jpg,data/transformed/case_13/crop_30.jpg,crop,30,"{""percent"": 30, ""mode"": ""total"", ""box"": [432, 288, 2448, 1632]}",95,2880,1920,2016,1344
+case_13,data/media/case_13/original.jpg,data/transformed/case_13/crop_40.jpg,crop,40,"{""percent"": 40, ""mode"": ""total"", ""box"": [576, 384, 2304, 1536]}",95,2880,1920,1728,1152
+case_13,data/media/case_13/original.jpg,data/transformed/case_13/crop_offcentre_left67.jpg,crop_offcentre,left67,"{""side"": ""left"", ""kept_percent"": 67, ""box"": [0, 0, 1930, 1920], ""aspect_ratio_changed"": true}",95,2880,1920,1930,1920
+case_13,data/media/case_13/original.jpg,data/transformed/case_13/crop_offcentre_right67.jpg,crop_offcentre,right67,"{""side"": ""right"", ""kept_percent"": 67, ""box"": [950, 0, 2880, 1920], ""aspect_ratio_changed"": true}",95,2880,1920,1930,1920
+case_13,data/media/case_13/original.jpg,data/transformed/case_13/crop_offcentre_top67.jpg,crop_offcentre,top67,"{""side"": ""top"", ""kept_percent"": 67, ""box"": [0, 0, 2880, 1286], ""aspect_ratio_changed"": true}",95,2880,1920,2880,1286
+case_13,data/media/case_13/original.jpg,data/transformed/case_13/crop_offcentre_bottom67.jpg,crop_offcentre,bottom67,"{""side"": ""bottom"", ""kept_percent"": 67, ""box"": [0, 634, 2880, 1920], ""aspect_ratio_changed"": true}",95,2880,1920,2880,1286
+case_13,data/media/case_13/original.jpg,data/transformed/case_13/resize_50.jpg,resize,50,"{""percent"": 50}",95,2880,1920,1440,960
+case_13,data/media/case_13/original.jpg,data/transformed/case_13/resize_25.jpg,resize,25,"{""percent"": 25}",95,2880,1920,720,480
+case_13,data/media/case_13/original.jpg,data/transformed/case_13/re_encode_q90.jpg,re_encode,q90,"{""jpeg_quality"": 90}",90,2880,1920,2880,1920
+case_13,data/media/case_13/original.jpg,data/transformed/case_13/re_encode_q70.jpg,re_encode,q70,"{""jpeg_quality"": 70}",70,2880,1920,2880,1920
+case_13,data/media/case_13/original.jpg,data/transformed/case_13/re_encode_q50.jpg,re_encode,q50,"{""jpeg_quality"": 50}",50,2880,1920,2880,1920
+case_13,data/media/case_13/original.jpg,data/transformed/case_13/screenshot_s90q75.jpg,screenshot,s90q75,"{""scale"": 0.9, ""jpeg_quality"": 75}",75,2880,1920,2592,1728
+case_13,data/media/case_13/original.jpg,data/transformed/case_13/mirror_h.jpg,mirror,h,"{""axis"": ""horizontal""}",95,2880,1920,2880,1920
+case_13,data/media/case_13/original.jpg,data/transformed/case_13/text_overlay_bar.jpg,text_overlay,bar,"{""style"": ""caption_bar"", ""bar_height_pct"": 14, ""text"": ""BREAKING: Happening right now""}",95,2880,1920,2880,1920
+case_13,data/media/case_13/original.jpg,data/transformed/case_13/text_overlay_meme.jpg,text_overlay,meme,"{""style"": ""meme_block"", ""text_top"": ""This is happening right now"", ""text_bottom"": ""They don't want you to see this""}",95,2880,1920,2880,1920
+case_13,data/media/case_13/original.jpg,data/transformed/case_13/logo_corner.jpg,logo,corner,"{""position"": ""bottom_right"", ""width_px"": 576}",95,2880,1920,2880,1920
+case_14,data/media/case_14/original.jpg,data/transformed/case_14/none_original.jpg,none,original,{},95,1000,667,1000,667
+case_14,data/media/case_14/original.jpg,data/transformed/case_14/crop_5.jpg,crop,5,"{""percent"": 5, ""mode"": ""total"", ""box"": [25, 16, 975, 651]}",95,1000,667,950,635
+case_14,data/media/case_14/original.jpg,data/transformed/case_14/crop_10.jpg,crop,10,"{""percent"": 10, ""mode"": ""total"", ""box"": [50, 33, 950, 634]}",95,1000,667,900,601
+case_14,data/media/case_14/original.jpg,data/transformed/case_14/crop_20.jpg,crop,20,"{""percent"": 20, ""mode"": ""total"", ""box"": [100, 66, 900, 601]}",95,1000,667,800,535
+case_14,data/media/case_14/original.jpg,data/transformed/case_14/crop_30.jpg,crop,30,"{""percent"": 30, ""mode"": ""total"", ""box"": [150, 100, 850, 567]}",95,1000,667,700,467
+case_14,data/media/case_14/original.jpg,data/transformed/case_14/crop_40.jpg,crop,40,"{""percent"": 40, ""mode"": ""total"", ""box"": [200, 133, 800, 534]}",95,1000,667,600,401
+case_14,data/media/case_14/original.jpg,data/transformed/case_14/crop_offcentre_left67.jpg,crop_offcentre,left67,"{""side"": ""left"", ""kept_percent"": 67, ""box"": [0, 0, 670, 667], ""aspect_ratio_changed"": true}",95,1000,667,670,667
+case_14,data/media/case_14/original.jpg,data/transformed/case_14/crop_offcentre_right67.jpg,crop_offcentre,right67,"{""side"": ""right"", ""kept_percent"": 67, ""box"": [330, 0, 1000, 667], ""aspect_ratio_changed"": true}",95,1000,667,670,667
+case_14,data/media/case_14/original.jpg,data/transformed/case_14/crop_offcentre_top67.jpg,crop_offcentre,top67,"{""side"": ""top"", ""kept_percent"": 67, ""box"": [0, 0, 1000, 447], ""aspect_ratio_changed"": true}",95,1000,667,1000,447
+case_14,data/media/case_14/original.jpg,data/transformed/case_14/crop_offcentre_bottom67.jpg,crop_offcentre,bottom67,"{""side"": ""bottom"", ""kept_percent"": 67, ""box"": [0, 220, 1000, 667], ""aspect_ratio_changed"": true}",95,1000,667,1000,447
+case_14,data/media/case_14/original.jpg,data/transformed/case_14/resize_50.jpg,resize,50,"{""percent"": 50}",95,1000,667,500,334
+case_14,data/media/case_14/original.jpg,data/transformed/case_14/resize_25.jpg,resize,25,"{""percent"": 25}",95,1000,667,250,167
+case_14,data/media/case_14/original.jpg,data/transformed/case_14/re_encode_q90.jpg,re_encode,q90,"{""jpeg_quality"": 90}",90,1000,667,1000,667
+case_14,data/media/case_14/original.jpg,data/transformed/case_14/re_encode_q70.jpg,re_encode,q70,"{""jpeg_quality"": 70}",70,1000,667,1000,667
+case_14,data/media/case_14/original.jpg,data/transformed/case_14/re_encode_q50.jpg,re_encode,q50,"{""jpeg_quality"": 50}",50,1000,667,1000,667
+case_14,data/media/case_14/original.jpg,data/transformed/case_14/screenshot_s90q75.jpg,screenshot,s90q75,"{""scale"": 0.9, ""jpeg_quality"": 75}",75,1000,667,900,600
+case_14,data/media/case_14/original.jpg,data/transformed/case_14/mirror_h.jpg,mirror,h,"{""axis"": ""horizontal""}",95,1000,667,1000,667
+case_14,data/media/case_14/original.jpg,data/transformed/case_14/text_overlay_bar.jpg,text_overlay,bar,"{""style"": ""caption_bar"", ""bar_height_pct"": 14, ""text"": ""BREAKING: Happening right now""}",95,1000,667,1000,667
+case_14,data/media/case_14/original.jpg,data/transformed/case_14/text_overlay_meme.jpg,text_overlay,meme,"{""style"": ""meme_block"", ""text_top"": ""This is happening right now"", ""text_bottom"": ""They don't want you to see this""}",95,1000,667,1000,667
+case_14,data/media/case_14/original.jpg,data/transformed/case_14/logo_corner.jpg,logo,corner,"{""position"": ""bottom_right"", ""width_px"": 200}",95,1000,667,1000,667
+case_15,data/media/case_15/original.jpg,data/transformed/case_15/none_original.jpg,none,original,{},95,1300,957,1300,957
+case_15,data/media/case_15/original.jpg,data/transformed/case_15/crop_5.jpg,crop,5,"{""percent"": 5, ""mode"": ""total"", ""box"": [32, 23, 1268, 934]}",95,1300,957,1236,911
+case_15,data/media/case_15/original.jpg,data/transformed/case_15/crop_10.jpg,crop,10,"{""percent"": 10, ""mode"": ""total"", ""box"": [65, 47, 1235, 910]}",95,1300,957,1170,863
+case_15,data/media/case_15/original.jpg,data/transformed/case_15/crop_20.jpg,crop,20,"{""percent"": 20, ""mode"": ""total"", ""box"": [130, 95, 1170, 862]}",95,1300,957,1040,767
+case_15,data/media/case_15/original.jpg,data/transformed/case_15/crop_30.jpg,crop,30,"{""percent"": 30, ""mode"": ""total"", ""box"": [195, 143, 1105, 814]}",95,1300,957,910,671
+case_15,data/media/case_15/original.jpg,data/transformed/case_15/crop_40.jpg,crop,40,"{""percent"": 40, ""mode"": ""total"", ""box"": [260, 191, 1040, 766]}",95,1300,957,780,575
+case_15,data/media/case_15/original.jpg,data/transformed/case_15/crop_offcentre_left67.jpg,crop_offcentre,left67,"{""side"": ""left"", ""kept_percent"": 67, ""box"": [0, 0, 871, 957], ""aspect_ratio_changed"": true}",95,1300,957,871,957
+case_15,data/media/case_15/original.jpg,data/transformed/case_15/crop_offcentre_right67.jpg,crop_offcentre,right67,"{""side"": ""right"", ""kept_percent"": 67, ""box"": [429, 0, 1300, 957], ""aspect_ratio_changed"": true}",95,1300,957,871,957
+case_15,data/media/case_15/original.jpg,data/transformed/case_15/crop_offcentre_top67.jpg,crop_offcentre,top67,"{""side"": ""top"", ""kept_percent"": 67, ""box"": [0, 0, 1300, 641], ""aspect_ratio_changed"": true}",95,1300,957,1300,641
+case_15,data/media/case_15/original.jpg,data/transformed/case_15/crop_offcentre_bottom67.jpg,crop_offcentre,bottom67,"{""side"": ""bottom"", ""kept_percent"": 67, ""box"": [0, 316, 1300, 957], ""aspect_ratio_changed"": true}",95,1300,957,1300,641
+case_15,data/media/case_15/original.jpg,data/transformed/case_15/resize_50.jpg,resize,50,"{""percent"": 50}",95,1300,957,650,478
+case_15,data/media/case_15/original.jpg,data/transformed/case_15/resize_25.jpg,resize,25,"{""percent"": 25}",95,1300,957,325,239
+case_15,data/media/case_15/original.jpg,data/transformed/case_15/re_encode_q90.jpg,re_encode,q90,"{""jpeg_quality"": 90}",90,1300,957,1300,957
+case_15,data/media/case_15/original.jpg,data/transformed/case_15/re_encode_q70.jpg,re_encode,q70,"{""jpeg_quality"": 70}",70,1300,957,1300,957
+case_15,data/media/case_15/original.jpg,data/transformed/case_15/re_encode_q50.jpg,re_encode,q50,"{""jpeg_quality"": 50}",50,1300,957,1300,957
+case_15,data/media/case_15/original.jpg,data/transformed/case_15/screenshot_s90q75.jpg,screenshot,s90q75,"{""scale"": 0.9, ""jpeg_quality"": 75}",75,1300,957,1170,861
+case_15,data/media/case_15/original.jpg,data/transformed/case_15/mirror_h.jpg,mirror,h,"{""axis"": ""horizontal""}",95,1300,957,1300,957
+case_15,data/media/case_15/original.jpg,data/transformed/case_15/text_overlay_bar.jpg,text_overlay,bar,"{""style"": ""caption_bar"", ""bar_height_pct"": 14, ""text"": ""BREAKING: Happening right now""}",95,1300,957,1300,957
+case_15,data/media/case_15/original.jpg,data/transformed/case_15/text_overlay_meme.jpg,text_overlay,meme,"{""style"": ""meme_block"", ""text_top"": ""This is happening right now"", ""text_bottom"": ""They don't want you to see this""}",95,1300,957,1300,957
+case_15,data/media/case_15/original.jpg,data/transformed/case_15/logo_corner.jpg,logo,corner,"{""position"": ""bottom_right"", ""width_px"": 287}",95,1300,957,1300,957
+case_16,data/media/case_16/original.jpg,data/transformed/case_16/none_original.jpg,none,original,{},95,960,1300,960,1300
+case_16,data/media/case_16/original.jpg,data/transformed/case_16/crop_5.jpg,crop,5,"{""percent"": 5, ""mode"": ""total"", ""box"": [24, 32, 936, 1268]}",95,960,1300,912,1236
+case_16,data/media/case_16/original.jpg,data/transformed/case_16/crop_10.jpg,crop,10,"{""percent"": 10, ""mode"": ""total"", ""box"": [48, 65, 912, 1235]}",95,960,1300,864,1170
+case_16,data/media/case_16/original.jpg,data/transformed/case_16/crop_20.jpg,crop,20,"{""percent"": 20, ""mode"": ""total"", ""box"": [96, 130, 864, 1170]}",95,960,1300,768,1040
+case_16,data/media/case_16/original.jpg,data/transformed/case_16/crop_30.jpg,crop,30,"{""percent"": 30, ""mode"": ""total"", ""box"": [144, 195, 816, 1105]}",95,960,1300,672,910
+case_16,data/media/case_16/original.jpg,data/transformed/case_16/crop_40.jpg,crop,40,"{""percent"": 40, ""mode"": ""total"", ""box"": [192, 260, 768, 1040]}",95,960,1300,576,780
+case_16,data/media/case_16/original.jpg,data/transformed/case_16/crop_offcentre_left67.jpg,crop_offcentre,left67,"{""side"": ""left"", ""kept_percent"": 67, ""box"": [0, 0, 643, 1300], ""aspect_ratio_changed"": true}",95,960,1300,643,1300
+case_16,data/media/case_16/original.jpg,data/transformed/case_16/crop_offcentre_right67.jpg,crop_offcentre,right67,"{""side"": ""right"", ""kept_percent"": 67, ""box"": [317, 0, 960, 1300], ""aspect_ratio_changed"": true}",95,960,1300,643,1300
+case_16,data/media/case_16/original.jpg,data/transformed/case_16/crop_offcentre_top67.jpg,crop_offcentre,top67,"{""side"": ""top"", ""kept_percent"": 67, ""box"": [0, 0, 960, 871], ""aspect_ratio_changed"": true}",95,960,1300,960,871
+case_16,data/media/case_16/original.jpg,data/transformed/case_16/crop_offcentre_bottom67.jpg,crop_offcentre,bottom67,"{""side"": ""bottom"", ""kept_percent"": 67, ""box"": [0, 429, 960, 1300], ""aspect_ratio_changed"": true}",95,960,1300,960,871
+case_16,data/media/case_16/original.jpg,data/transformed/case_16/resize_50.jpg,resize,50,"{""percent"": 50}",95,960,1300,480,650
+case_16,data/media/case_16/original.jpg,data/transformed/case_16/resize_25.jpg,resize,25,"{""percent"": 25}",95,960,1300,240,325
+case_16,data/media/case_16/original.jpg,data/transformed/case_16/re_encode_q90.jpg,re_encode,q90,"{""jpeg_quality"": 90}",90,960,1300,960,1300
+case_16,data/media/case_16/original.jpg,data/transformed/case_16/re_encode_q70.jpg,re_encode,q70,"{""jpeg_quality"": 70}",70,960,1300,960,1300
+case_16,data/media/case_16/original.jpg,data/transformed/case_16/re_encode_q50.jpg,re_encode,q50,"{""jpeg_quality"": 50}",50,960,1300,960,1300
+case_16,data/media/case_16/original.jpg,data/transformed/case_16/screenshot_s90q75.jpg,screenshot,s90q75,"{""scale"": 0.9, ""jpeg_quality"": 75}",75,960,1300,864,1170
+case_16,data/media/case_16/original.jpg,data/transformed/case_16/mirror_h.jpg,mirror,h,"{""axis"": ""horizontal""}",95,960,1300,960,1300
+case_16,data/media/case_16/original.jpg,data/transformed/case_16/text_overlay_bar.jpg,text_overlay,bar,"{""style"": ""caption_bar"", ""bar_height_pct"": 14, ""text"": ""BREAKING: Happening right now""}",95,960,1300,960,1300
+case_16,data/media/case_16/original.jpg,data/transformed/case_16/text_overlay_meme.jpg,text_overlay,meme,"{""style"": ""meme_block"", ""text_top"": ""This is happening right now"", ""text_bottom"": ""They don't want you to see this""}",95,960,1300,960,1300
+case_16,data/media/case_16/original.jpg,data/transformed/case_16/logo_corner.jpg,logo,corner,"{""position"": ""bottom_right"", ""width_px"": 288}",95,960,1300,960,1300
+case_17,data/media/case_17/original.jpg,data/transformed/case_17/none_original.jpg,none,original,{},95,2048,1366,2048,1366
+case_17,data/media/case_17/original.jpg,data/transformed/case_17/crop_5.jpg,crop,5,"{""percent"": 5, ""mode"": ""total"", ""box"": [51, 34, 1997, 1332]}",95,2048,1366,1946,1298
+case_17,data/media/case_17/original.jpg,data/transformed/case_17/crop_10.jpg,crop,10,"{""percent"": 10, ""mode"": ""total"", ""box"": [102, 68, 1946, 1298]}",95,2048,1366,1844,1230
+case_17,data/media/case_17/original.jpg,data/transformed/case_17/crop_20.jpg,crop,20,"{""percent"": 20, ""mode"": ""total"", ""box"": [204, 136, 1844, 1230]}",95,2048,1366,1640,1094
+case_17,data/media/case_17/original.jpg,data/transformed/case_17/crop_30.jpg,crop,30,"{""percent"": 30, ""mode"": ""total"", ""box"": [307, 204, 1741, 1162]}",95,2048,1366,1434,958
+case_17,data/media/case_17/original.jpg,data/transformed/case_17/crop_40.jpg,crop,40,"{""percent"": 40, ""mode"": ""total"", ""box"": [409, 273, 1639, 1093]}",95,2048,1366,1230,820
+case_17,data/media/case_17/original.jpg,data/transformed/case_17/crop_offcentre_left67.jpg,crop_offcentre,left67,"{""side"": ""left"", ""kept_percent"": 67, ""box"": [0, 0, 1372, 1366], ""aspect_ratio_changed"": true}",95,2048,1366,1372,1366
+case_17,data/media/case_17/original.jpg,data/transformed/case_17/crop_offcentre_right67.jpg,crop_offcentre,right67,"{""side"": ""right"", ""kept_percent"": 67, ""box"": [676, 0, 2048, 1366], ""aspect_ratio_changed"": true}",95,2048,1366,1372,1366
+case_17,data/media/case_17/original.jpg,data/transformed/case_17/crop_offcentre_top67.jpg,crop_offcentre,top67,"{""side"": ""top"", ""kept_percent"": 67, ""box"": [0, 0, 2048, 915], ""aspect_ratio_changed"": true}",95,2048,1366,2048,915
+case_17,data/media/case_17/original.jpg,data/transformed/case_17/crop_offcentre_bottom67.jpg,crop_offcentre,bottom67,"{""side"": ""bottom"", ""kept_percent"": 67, ""box"": [0, 451, 2048, 1366], ""aspect_ratio_changed"": true}",95,2048,1366,2048,915
+case_17,data/media/case_17/original.jpg,data/transformed/case_17/resize_50.jpg,resize,50,"{""percent"": 50}",95,2048,1366,1024,683
+case_17,data/media/case_17/original.jpg,data/transformed/case_17/resize_25.jpg,resize,25,"{""percent"": 25}",95,2048,1366,512,342
+case_17,data/media/case_17/original.jpg,data/transformed/case_17/re_encode_q90.jpg,re_encode,q90,"{""jpeg_quality"": 90}",90,2048,1366,2048,1366
+case_17,data/media/case_17/original.jpg,data/transformed/case_17/re_encode_q70.jpg,re_encode,q70,"{""jpeg_quality"": 70}",70,2048,1366,2048,1366
+case_17,data/media/case_17/original.jpg,data/transformed/case_17/re_encode_q50.jpg,re_encode,q50,"{""jpeg_quality"": 50}",50,2048,1366,2048,1366
+case_17,data/media/case_17/original.jpg,data/transformed/case_17/screenshot_s90q75.jpg,screenshot,s90q75,"{""scale"": 0.9, ""jpeg_quality"": 75}",75,2048,1366,1843,1229
+case_17,data/media/case_17/original.jpg,data/transformed/case_17/mirror_h.jpg,mirror,h,"{""axis"": ""horizontal""}",95,2048,1366,2048,1366
+case_17,data/media/case_17/original.jpg,data/transformed/case_17/text_overlay_bar.jpg,text_overlay,bar,"{""style"": ""caption_bar"", ""bar_height_pct"": 14, ""text"": ""BREAKING: Happening right now""}",95,2048,1366,2048,1366
+case_17,data/media/case_17/original.jpg,data/transformed/case_17/text_overlay_meme.jpg,text_overlay,meme,"{""style"": ""meme_block"", ""text_top"": ""This is happening right now"", ""text_bottom"": ""They don't want you to see this""}",95,2048,1366,2048,1366
+case_17,data/media/case_17/original.jpg,data/transformed/case_17/logo_corner.jpg,logo,corner,"{""position"": ""bottom_right"", ""width_px"": 409}",95,2048,1366,2048,1366
+case_18,data/media/case_18/original.jpg,data/transformed/case_18/none_original.jpg,none,original,{},95,962,641,962,641
+case_18,data/media/case_18/original.jpg,data/transformed/case_18/crop_5.jpg,crop,5,"{""percent"": 5, ""mode"": ""total"", ""box"": [24, 16, 938, 625]}",95,962,641,914,609
+case_18,data/media/case_18/original.jpg,data/transformed/case_18/crop_10.jpg,crop,10,"{""percent"": 10, ""mode"": ""total"", ""box"": [48, 32, 914, 609]}",95,962,641,866,577
+case_18,data/media/case_18/original.jpg,data/transformed/case_18/crop_20.jpg,crop,20,"{""percent"": 20, ""mode"": ""total"", ""box"": [96, 64, 866, 577]}",95,962,641,770,513
+case_18,data/media/case_18/original.jpg,data/transformed/case_18/crop_30.jpg,crop,30,"{""percent"": 30, ""mode"": ""total"", ""box"": [144, 96, 818, 545]}",95,962,641,674,449
+case_18,data/media/case_18/original.jpg,data/transformed/case_18/crop_40.jpg,crop,40,"{""percent"": 40, ""mode"": ""total"", ""box"": [192, 128, 770, 513]}",95,962,641,578,385
+case_18,data/media/case_18/original.jpg,data/transformed/case_18/crop_offcentre_left67.jpg,crop_offcentre,left67,"{""side"": ""left"", ""kept_percent"": 67, ""box"": [0, 0, 645, 641], ""aspect_ratio_changed"": true}",95,962,641,645,641
+case_18,data/media/case_18/original.jpg,data/transformed/case_18/crop_offcentre_right67.jpg,crop_offcentre,right67,"{""side"": ""right"", ""kept_percent"": 67, ""box"": [317, 0, 962, 641], ""aspect_ratio_changed"": true}",95,962,641,645,641
+case_18,data/media/case_18/original.jpg,data/transformed/case_18/crop_offcentre_top67.jpg,crop_offcentre,top67,"{""side"": ""top"", ""kept_percent"": 67, ""box"": [0, 0, 962, 429], ""aspect_ratio_changed"": true}",95,962,641,962,429
+case_18,data/media/case_18/original.jpg,data/transformed/case_18/crop_offcentre_bottom67.jpg,crop_offcentre,bottom67,"{""side"": ""bottom"", ""kept_percent"": 67, ""box"": [0, 212, 962, 641], ""aspect_ratio_changed"": true}",95,962,641,962,429
+case_18,data/media/case_18/original.jpg,data/transformed/case_18/resize_50.jpg,resize,50,"{""percent"": 50}",95,962,641,481,320
+case_18,data/media/case_18/original.jpg,data/transformed/case_18/resize_25.jpg,resize,25,"{""percent"": 25}",95,962,641,240,160
+case_18,data/media/case_18/original.jpg,data/transformed/case_18/re_encode_q90.jpg,re_encode,q90,"{""jpeg_quality"": 90}",90,962,641,962,641
+case_18,data/media/case_18/original.jpg,data/transformed/case_18/re_encode_q70.jpg,re_encode,q70,"{""jpeg_quality"": 70}",70,962,641,962,641
+case_18,data/media/case_18/original.jpg,data/transformed/case_18/re_encode_q50.jpg,re_encode,q50,"{""jpeg_quality"": 50}",50,962,641,962,641
+case_18,data/media/case_18/original.jpg,data/transformed/case_18/screenshot_s90q75.jpg,screenshot,s90q75,"{""scale"": 0.9, ""jpeg_quality"": 75}",75,962,641,866,577
+case_18,data/media/case_18/original.jpg,data/transformed/case_18/mirror_h.jpg,mirror,h,"{""axis"": ""horizontal""}",95,962,641,962,641
+case_18,data/media/case_18/original.jpg,data/transformed/case_18/text_overlay_bar.jpg,text_overlay,bar,"{""style"": ""caption_bar"", ""bar_height_pct"": 14, ""text"": ""BREAKING: Happening right now""}",95,962,641,962,641
+case_18,data/media/case_18/original.jpg,data/transformed/case_18/text_overlay_meme.jpg,text_overlay,meme,"{""style"": ""meme_block"", ""text_top"": ""This is happening right now"", ""text_bottom"": ""They don't want you to see this""}",95,962,641,962,641
+case_18,data/media/case_18/original.jpg,data/transformed/case_18/logo_corner.jpg,logo,corner,"{""position"": ""bottom_right"", ""width_px"": 192}",95,962,641,962,641
+case_19,data/media/case_19/original.jpg,data/transformed/case_19/none_original.jpg,none,original,{},95,955,956,955,956
+case_19,data/media/case_19/original.jpg,data/transformed/case_19/crop_5.jpg,crop,5,"{""percent"": 5, ""mode"": ""total"", ""box"": [23, 23, 932, 933]}",95,955,956,909,910
+case_19,data/media/case_19/original.jpg,data/transformed/case_19/crop_10.jpg,crop,10,"{""percent"": 10, ""mode"": ""total"", ""box"": [47, 47, 908, 909]}",95,955,956,861,862
+case_19,data/media/case_19/original.jpg,data/transformed/case_19/crop_20.jpg,crop,20,"{""percent"": 20, ""mode"": ""total"", ""box"": [95, 95, 860, 861]}",95,955,956,765,766
+case_19,data/media/case_19/original.jpg,data/transformed/case_19/crop_30.jpg,crop,30,"{""percent"": 30, ""mode"": ""total"", ""box"": [143, 143, 812, 813]}",95,955,956,669,670
+case_19,data/media/case_19/original.jpg,data/transformed/case_19/crop_40.jpg,crop,40,"{""percent"": 40, ""mode"": ""total"", ""box"": [191, 191, 764, 765]}",95,955,956,573,574
+case_19,data/media/case_19/original.jpg,data/transformed/case_19/crop_offcentre_left67.jpg,crop_offcentre,left67,"{""side"": ""left"", ""kept_percent"": 67, ""box"": [0, 0, 640, 956], ""aspect_ratio_changed"": true}",95,955,956,640,956
+case_19,data/media/case_19/original.jpg,data/transformed/case_19/crop_offcentre_right67.jpg,crop_offcentre,right67,"{""side"": ""right"", ""kept_percent"": 67, ""box"": [315, 0, 955, 956], ""aspect_ratio_changed"": true}",95,955,956,640,956
+case_19,data/media/case_19/original.jpg,data/transformed/case_19/crop_offcentre_top67.jpg,crop_offcentre,top67,"{""side"": ""top"", ""kept_percent"": 67, ""box"": [0, 0, 955, 641], ""aspect_ratio_changed"": true}",95,955,956,955,641
+case_19,data/media/case_19/original.jpg,data/transformed/case_19/crop_offcentre_bottom67.jpg,crop_offcentre,bottom67,"{""side"": ""bottom"", ""kept_percent"": 67, ""box"": [0, 315, 955, 956], ""aspect_ratio_changed"": true}",95,955,956,955,641
+case_19,data/media/case_19/original.jpg,data/transformed/case_19/resize_50.jpg,resize,50,"{""percent"": 50}",95,955,956,478,478
+case_19,data/media/case_19/original.jpg,data/transformed/case_19/resize_25.jpg,resize,25,"{""percent"": 25}",95,955,956,239,239
+case_19,data/media/case_19/original.jpg,data/transformed/case_19/re_encode_q90.jpg,re_encode,q90,"{""jpeg_quality"": 90}",90,955,956,955,956
+case_19,data/media/case_19/original.jpg,data/transformed/case_19/re_encode_q70.jpg,re_encode,q70,"{""jpeg_quality"": 70}",70,955,956,955,956
+case_19,data/media/case_19/original.jpg,data/transformed/case_19/re_encode_q50.jpg,re_encode,q50,"{""jpeg_quality"": 50}",50,955,956,955,956
+case_19,data/media/case_19/original.jpg,data/transformed/case_19/screenshot_s90q75.jpg,screenshot,s90q75,"{""scale"": 0.9, ""jpeg_quality"": 75}",75,955,956,860,860
+case_19,data/media/case_19/original.jpg,data/transformed/case_19/mirror_h.jpg,mirror,h,"{""axis"": ""horizontal""}",95,955,956,955,956
+case_19,data/media/case_19/original.jpg,data/transformed/case_19/text_overlay_bar.jpg,text_overlay,bar,"{""style"": ""caption_bar"", ""bar_height_pct"": 14, ""text"": ""BREAKING: Happening right now""}",95,955,956,955,956
+case_19,data/media/case_19/original.jpg,data/transformed/case_19/text_overlay_meme.jpg,text_overlay,meme,"{""style"": ""meme_block"", ""text_top"": ""This is happening right now"", ""text_bottom"": ""They don't want you to see this""}",95,955,956,955,956
+case_19,data/media/case_19/original.jpg,data/transformed/case_19/logo_corner.jpg,logo,corner,"{""position"": ""bottom_right"", ""width_px"": 286}",95,955,956,955,956
+case_20,data/media/case_20/original.jpg,data/transformed/case_20/none_original.jpg,none,original,{},95,1042,695,1042,695
+case_20,data/media/case_20/original.jpg,data/transformed/case_20/crop_5.jpg,crop,5,"{""percent"": 5, ""mode"": ""total"", ""box"": [26, 17, 1016, 678]}",95,1042,695,990,661
+case_20,data/media/case_20/original.jpg,data/transformed/case_20/crop_10.jpg,crop,10,"{""percent"": 10, ""mode"": ""total"", ""box"": [52, 34, 990, 661]}",95,1042,695,938,627
+case_20,data/media/case_20/original.jpg,data/transformed/case_20/crop_20.jpg,crop,20,"{""percent"": 20, ""mode"": ""total"", ""box"": [104, 69, 938, 626]}",95,1042,695,834,557
+case_20,data/media/case_20/original.jpg,data/transformed/case_20/crop_30.jpg,crop,30,"{""percent"": 30, ""mode"": ""total"", ""box"": [156, 104, 886, 591]}",95,1042,695,730,487
+case_20,data/media/case_20/original.jpg,data/transformed/case_20/crop_40.jpg,crop,40,"{""percent"": 40, ""mode"": ""total"", ""box"": [208, 139, 834, 556]}",95,1042,695,626,417
+case_20,data/media/case_20/original.jpg,data/transformed/case_20/crop_offcentre_left67.jpg,crop_offcentre,left67,"{""side"": ""left"", ""kept_percent"": 67, ""box"": [0, 0, 698, 695], ""aspect_ratio_changed"": true}",95,1042,695,698,695
+case_20,data/media/case_20/original.jpg,data/transformed/case_20/crop_offcentre_right67.jpg,crop_offcentre,right67,"{""side"": ""right"", ""kept_percent"": 67, ""box"": [344, 0, 1042, 695], ""aspect_ratio_changed"": true}",95,1042,695,698,695
+case_20,data/media/case_20/original.jpg,data/transformed/case_20/crop_offcentre_top67.jpg,crop_offcentre,top67,"{""side"": ""top"", ""kept_percent"": 67, ""box"": [0, 0, 1042, 466], ""aspect_ratio_changed"": true}",95,1042,695,1042,466
+case_20,data/media/case_20/original.jpg,data/transformed/case_20/crop_offcentre_bottom67.jpg,crop_offcentre,bottom67,"{""side"": ""bottom"", ""kept_percent"": 67, ""box"": [0, 229, 1042, 695], ""aspect_ratio_changed"": true}",95,1042,695,1042,466
+case_20,data/media/case_20/original.jpg,data/transformed/case_20/resize_50.jpg,resize,50,"{""percent"": 50}",95,1042,695,521,348
+case_20,data/media/case_20/original.jpg,data/transformed/case_20/resize_25.jpg,resize,25,"{""percent"": 25}",95,1042,695,260,174
+case_20,data/media/case_20/original.jpg,data/transformed/case_20/re_encode_q90.jpg,re_encode,q90,"{""jpeg_quality"": 90}",90,1042,695,1042,695
+case_20,data/media/case_20/original.jpg,data/transformed/case_20/re_encode_q70.jpg,re_encode,q70,"{""jpeg_quality"": 70}",70,1042,695,1042,695
+case_20,data/media/case_20/original.jpg,data/transformed/case_20/re_encode_q50.jpg,re_encode,q50,"{""jpeg_quality"": 50}",50,1042,695,1042,695
+case_20,data/media/case_20/original.jpg,data/transformed/case_20/screenshot_s90q75.jpg,screenshot,s90q75,"{""scale"": 0.9, ""jpeg_quality"": 75}",75,1042,695,938,626
+case_20,data/media/case_20/original.jpg,data/transformed/case_20/mirror_h.jpg,mirror,h,"{""axis"": ""horizontal""}",95,1042,695,1042,695
+case_20,data/media/case_20/original.jpg,data/transformed/case_20/text_overlay_bar.jpg,text_overlay,bar,"{""style"": ""caption_bar"", ""bar_height_pct"": 14, ""text"": ""BREAKING: Happening right now""}",95,1042,695,1042,695
+case_20,data/media/case_20/original.jpg,data/transformed/case_20/text_overlay_meme.jpg,text_overlay,meme,"{""style"": ""meme_block"", ""text_top"": ""This is happening right now"", ""text_bottom"": ""They don't want you to see this""}",95,1042,695,1042,695
+case_20,data/media/case_20/original.jpg,data/transformed/case_20/logo_corner.jpg,logo,corner,"{""position"": ""bottom_right"", ""width_px"": 208}",95,1042,695,1042,695
+case_21,data/media/case_21/original.jpeg,data/transformed/case_21/none_original.jpg,none,original,{},95,1438,525,1438,525
+case_21,data/media/case_21/original.jpeg,data/transformed/case_21/crop_5.jpg,crop,5,"{""percent"": 5, ""mode"": ""total"", ""box"": [35, 13, 1403, 512]}",95,1438,525,1368,499
+case_21,data/media/case_21/original.jpeg,data/transformed/case_21/crop_10.jpg,crop,10,"{""percent"": 10, ""mode"": ""total"", ""box"": [71, 26, 1367, 499]}",95,1438,525,1296,473
+case_21,data/media/case_21/original.jpeg,data/transformed/case_21/crop_20.jpg,crop,20,"{""percent"": 20, ""mode"": ""total"", ""box"": [143, 52, 1295, 473]}",95,1438,525,1152,421
+case_21,data/media/case_21/original.jpeg,data/transformed/case_21/crop_30.jpg,crop,30,"{""percent"": 30, ""mode"": ""total"", ""box"": [215, 78, 1223, 447]}",95,1438,525,1008,369
+case_21,data/media/case_21/original.jpeg,data/transformed/case_21/crop_40.jpg,crop,40,"{""percent"": 40, ""mode"": ""total"", ""box"": [287, 105, 1151, 420]}",95,1438,525,864,315
+case_21,data/media/case_21/original.jpeg,data/transformed/case_21/crop_offcentre_left67.jpg,crop_offcentre,left67,"{""side"": ""left"", ""kept_percent"": 67, ""box"": [0, 0, 963, 525], ""aspect_ratio_changed"": true}",95,1438,525,963,525
+case_21,data/media/case_21/original.jpeg,data/transformed/case_21/crop_offcentre_right67.jpg,crop_offcentre,right67,"{""side"": ""right"", ""kept_percent"": 67, ""box"": [475, 0, 1438, 525], ""aspect_ratio_changed"": true}",95,1438,525,963,525
+case_21,data/media/case_21/original.jpeg,data/transformed/case_21/crop_offcentre_top67.jpg,crop_offcentre,top67,"{""side"": ""top"", ""kept_percent"": 67, ""box"": [0, 0, 1438, 352], ""aspect_ratio_changed"": true}",95,1438,525,1438,352
+case_21,data/media/case_21/original.jpeg,data/transformed/case_21/crop_offcentre_bottom67.jpg,crop_offcentre,bottom67,"{""side"": ""bottom"", ""kept_percent"": 67, ""box"": [0, 173, 1438, 525], ""aspect_ratio_changed"": true}",95,1438,525,1438,352
+case_21,data/media/case_21/original.jpeg,data/transformed/case_21/resize_50.jpg,resize,50,"{""percent"": 50}",95,1438,525,719,262
+case_21,data/media/case_21/original.jpeg,data/transformed/case_21/resize_25.jpg,resize,25,"{""percent"": 25}",95,1438,525,360,131
+case_21,data/media/case_21/original.jpeg,data/transformed/case_21/re_encode_q90.jpg,re_encode,q90,"{""jpeg_quality"": 90}",90,1438,525,1438,525
+case_21,data/media/case_21/original.jpeg,data/transformed/case_21/re_encode_q70.jpg,re_encode,q70,"{""jpeg_quality"": 70}",70,1438,525,1438,525
+case_21,data/media/case_21/original.jpeg,data/transformed/case_21/re_encode_q50.jpg,re_encode,q50,"{""jpeg_quality"": 50}",50,1438,525,1438,525
+case_21,data/media/case_21/original.jpeg,data/transformed/case_21/screenshot_s90q75.jpg,screenshot,s90q75,"{""scale"": 0.9, ""jpeg_quality"": 75}",75,1438,525,1294,472
+case_21,data/media/case_21/original.jpeg,data/transformed/case_21/mirror_h.jpg,mirror,h,"{""axis"": ""horizontal""}",95,1438,525,1438,525
+case_21,data/media/case_21/original.jpeg,data/transformed/case_21/text_overlay_bar.jpg,text_overlay,bar,"{""style"": ""caption_bar"", ""bar_height_pct"": 14, ""text"": ""BREAKING: Happening right now""}",95,1438,525,1438,525
+case_21,data/media/case_21/original.jpeg,data/transformed/case_21/text_overlay_meme.jpg,text_overlay,meme,"{""style"": ""meme_block"", ""text_top"": ""This is happening right now"", ""text_bottom"": ""They don't want you to see this""}",95,1438,525,1438,525
+case_21,data/media/case_21/original.jpeg,data/transformed/case_21/logo_corner.jpg,logo,corner,"{""position"": ""bottom_right"", ""width_px"": 157}",95,1438,525,1438,525
+case_22,data/media/case_22/original.jpeg,data/transformed/case_22/none_original.jpg,none,original,{},95,436,586,436,586
+case_22,data/media/case_22/original.jpeg,data/transformed/case_22/crop_5.jpg,crop,5,"{""percent"": 5, ""mode"": ""total"", ""box"": [10, 14, 426, 572]}",95,436,586,416,558
+case_22,data/media/case_22/original.jpeg,data/transformed/case_22/crop_10.jpg,crop,10,"{""percent"": 10, ""mode"": ""total"", ""box"": [21, 29, 415, 557]}",95,436,586,394,528
+case_22,data/media/case_22/original.jpeg,data/transformed/case_22/crop_20.jpg,crop,20,"{""percent"": 20, ""mode"": ""total"", ""box"": [43, 58, 393, 528]}",95,436,586,350,470
+case_22,data/media/case_22/original.jpeg,data/transformed/case_22/crop_30.jpg,crop,30,"{""percent"": 30, ""mode"": ""total"", ""box"": [65, 87, 371, 499]}",95,436,586,306,412
+case_22,data/media/case_22/original.jpeg,data/transformed/case_22/crop_40.jpg,crop,40,"{""percent"": 40, ""mode"": ""total"", ""box"": [87, 117, 349, 469]}",95,436,586,262,352
+case_22,data/media/case_22/original.jpeg,data/transformed/case_22/crop_offcentre_left67.jpg,crop_offcentre,left67,"{""side"": ""left"", ""kept_percent"": 67, ""box"": [0, 0, 292, 586], ""aspect_ratio_changed"": true}",95,436,586,292,586
+case_22,data/media/case_22/original.jpeg,data/transformed/case_22/crop_offcentre_right67.jpg,crop_offcentre,right67,"{""side"": ""right"", ""kept_percent"": 67, ""box"": [144, 0, 436, 586], ""aspect_ratio_changed"": true}",95,436,586,292,586
+case_22,data/media/case_22/original.jpeg,data/transformed/case_22/crop_offcentre_top67.jpg,crop_offcentre,top67,"{""side"": ""top"", ""kept_percent"": 67, ""box"": [0, 0, 436, 393], ""aspect_ratio_changed"": true}",95,436,586,436,393
+case_22,data/media/case_22/original.jpeg,data/transformed/case_22/crop_offcentre_bottom67.jpg,crop_offcentre,bottom67,"{""side"": ""bottom"", ""kept_percent"": 67, ""box"": [0, 193, 436, 586], ""aspect_ratio_changed"": true}",95,436,586,436,393
+case_22,data/media/case_22/original.jpeg,data/transformed/case_22/resize_50.jpg,resize,50,"{""percent"": 50}",95,436,586,218,293
+case_22,data/media/case_22/original.jpeg,data/transformed/case_22/resize_25.jpg,resize,25,"{""percent"": 25}",95,436,586,109,146
+case_22,data/media/case_22/original.jpeg,data/transformed/case_22/re_encode_q90.jpg,re_encode,q90,"{""jpeg_quality"": 90}",90,436,586,436,586
+case_22,data/media/case_22/original.jpeg,data/transformed/case_22/re_encode_q70.jpg,re_encode,q70,"{""jpeg_quality"": 70}",70,436,586,436,586
+case_22,data/media/case_22/original.jpeg,data/transformed/case_22/re_encode_q50.jpg,re_encode,q50,"{""jpeg_quality"": 50}",50,436,586,436,586
+case_22,data/media/case_22/original.jpeg,data/transformed/case_22/screenshot_s90q75.jpg,screenshot,s90q75,"{""scale"": 0.9, ""jpeg_quality"": 75}",75,436,586,392,527
+case_22,data/media/case_22/original.jpeg,data/transformed/case_22/mirror_h.jpg,mirror,h,"{""axis"": ""horizontal""}",95,436,586,436,586
+case_22,data/media/case_22/original.jpeg,data/transformed/case_22/text_overlay_bar.jpg,text_overlay,bar,"{""style"": ""caption_bar"", ""bar_height_pct"": 14, ""text"": ""BREAKING: Happening right now""}",95,436,586,436,586
+case_22,data/media/case_22/original.jpeg,data/transformed/case_22/text_overlay_meme.jpg,text_overlay,meme,"{""style"": ""meme_block"", ""text_top"": ""This is happening right now"", ""text_bottom"": ""They don't want you to see this""}",95,436,586,436,586
+case_22,data/media/case_22/original.jpeg,data/transformed/case_22/logo_corner.jpg,logo,corner,"{""position"": ""bottom_right"", ""width_px"": 130}",95,436,586,436,586
+case_23,data/media/case_23/original.jpg,data/transformed/case_23/none_original.jpg,none,original,{},95,2048,1366,2048,1366
+case_23,data/media/case_23/original.jpg,data/transformed/case_23/crop_5.jpg,crop,5,"{""percent"": 5, ""mode"": ""total"", ""box"": [51, 34, 1997, 1332]}",95,2048,1366,1946,1298
+case_23,data/media/case_23/original.jpg,data/transformed/case_23/crop_10.jpg,crop,10,"{""percent"": 10, ""mode"": ""total"", ""box"": [102, 68, 1946, 1298]}",95,2048,1366,1844,1230
+case_23,data/media/case_23/original.jpg,data/transformed/case_23/crop_20.jpg,crop,20,"{""percent"": 20, ""mode"": ""total"", ""box"": [204, 136, 1844, 1230]}",95,2048,1366,1640,1094
+case_23,data/media/case_23/original.jpg,data/transformed/case_23/crop_30.jpg,crop,30,"{""percent"": 30, ""mode"": ""total"", ""box"": [307, 204, 1741, 1162]}",95,2048,1366,1434,958
+case_23,data/media/case_23/original.jpg,data/transformed/case_23/crop_40.jpg,crop,40,"{""percent"": 40, ""mode"": ""total"", ""box"": [409, 273, 1639, 1093]}",95,2048,1366,1230,820
+case_23,data/media/case_23/original.jpg,data/transformed/case_23/crop_offcentre_left67.jpg,crop_offcentre,left67,"{""side"": ""left"", ""kept_percent"": 67, ""box"": [0, 0, 1372, 1366], ""aspect_ratio_changed"": true}",95,2048,1366,1372,1366
+case_23,data/media/case_23/original.jpg,data/transformed/case_23/crop_offcentre_right67.jpg,crop_offcentre,right67,"{""side"": ""right"", ""kept_percent"": 67, ""box"": [676, 0, 2048, 1366], ""aspect_ratio_changed"": true}",95,2048,1366,1372,1366
+case_23,data/media/case_23/original.jpg,data/transformed/case_23/crop_offcentre_top67.jpg,crop_offcentre,top67,"{""side"": ""top"", ""kept_percent"": 67, ""box"": [0, 0, 2048, 915], ""aspect_ratio_changed"": true}",95,2048,1366,2048,915
+case_23,data/media/case_23/original.jpg,data/transformed/case_23/crop_offcentre_bottom67.jpg,crop_offcentre,bottom67,"{""side"": ""bottom"", ""kept_percent"": 67, ""box"": [0, 451, 2048, 1366], ""aspect_ratio_changed"": true}",95,2048,1366,2048,915
+case_23,data/media/case_23/original.jpg,data/transformed/case_23/resize_50.jpg,resize,50,"{""percent"": 50}",95,2048,1366,1024,683
+case_23,data/media/case_23/original.jpg,data/transformed/case_23/resize_25.jpg,resize,25,"{""percent"": 25}",95,2048,1366,512,342
+case_23,data/media/case_23/original.jpg,data/transformed/case_23/re_encode_q90.jpg,re_encode,q90,"{""jpeg_quality"": 90}",90,2048,1366,2048,1366
+case_23,data/media/case_23/original.jpg,data/transformed/case_23/re_encode_q70.jpg,re_encode,q70,"{""jpeg_quality"": 70}",70,2048,1366,2048,1366
+case_23,data/media/case_23/original.jpg,data/transformed/case_23/re_encode_q50.jpg,re_encode,q50,"{""jpeg_quality"": 50}",50,2048,1366,2048,1366
+case_23,data/media/case_23/original.jpg,data/transformed/case_23/screenshot_s90q75.jpg,screenshot,s90q75,"{""scale"": 0.9, ""jpeg_quality"": 75}",75,2048,1366,1843,1229
+case_23,data/media/case_23/original.jpg,data/transformed/case_23/mirror_h.jpg,mirror,h,"{""axis"": ""horizontal""}",95,2048,1366,2048,1366
+case_23,data/media/case_23/original.jpg,data/transformed/case_23/text_overlay_bar.jpg,text_overlay,bar,"{""style"": ""caption_bar"", ""bar_height_pct"": 14, ""text"": ""BREAKING: Happening right now""}",95,2048,1366,2048,1366
+case_23,data/media/case_23/original.jpg,data/transformed/case_23/text_overlay_meme.jpg,text_overlay,meme,"{""style"": ""meme_block"", ""text_top"": ""This is happening right now"", ""text_bottom"": ""They don't want you to see this""}",95,2048,1366,2048,1366
+case_23,data/media/case_23/original.jpg,data/transformed/case_23/logo_corner.jpg,logo,corner,"{""position"": ""bottom_right"", ""width_px"": 409}",95,2048,1366,2048,1366
+case_24,data/media/case_24/original.jpg,data/transformed/case_24/none_original.jpg,none,original,{},95,1300,956,1300,956
+case_24,data/media/case_24/original.jpg,data/transformed/case_24/crop_5.jpg,crop,5,"{""percent"": 5, ""mode"": ""total"", ""box"": [32, 23, 1268, 933]}",95,1300,956,1236,910
+case_24,data/media/case_24/original.jpg,data/transformed/case_24/crop_10.jpg,crop,10,"{""percent"": 10, ""mode"": ""total"", ""box"": [65, 47, 1235, 909]}",95,1300,956,1170,862
+case_24,data/media/case_24/original.jpg,data/transformed/case_24/crop_20.jpg,crop,20,"{""percent"": 20, ""mode"": ""total"", ""box"": [130, 95, 1170, 861]}",95,1300,956,1040,766
+case_24,data/media/case_24/original.jpg,data/transformed/case_24/crop_30.jpg,crop,30,"{""percent"": 30, ""mode"": ""total"", ""box"": [195, 143, 1105, 813]}",95,1300,956,910,670
+case_24,data/media/case_24/original.jpg,data/transformed/case_24/crop_40.jpg,crop,40,"{""percent"": 40, ""mode"": ""total"", ""box"": [260, 191, 1040, 765]}",95,1300,956,780,574
+case_24,data/media/case_24/original.jpg,data/transformed/case_24/crop_offcentre_left67.jpg,crop_offcentre,left67,"{""side"": ""left"", ""kept_percent"": 67, ""box"": [0, 0, 871, 956], ""aspect_ratio_changed"": true}",95,1300,956,871,956
+case_24,data/media/case_24/original.jpg,data/transformed/case_24/crop_offcentre_right67.jpg,crop_offcentre,right67,"{""side"": ""right"", ""kept_percent"": 67, ""box"": [429, 0, 1300, 956], ""aspect_ratio_changed"": true}",95,1300,956,871,956
+case_24,data/media/case_24/original.jpg,data/transformed/case_24/crop_offcentre_top67.jpg,crop_offcentre,top67,"{""side"": ""top"", ""kept_percent"": 67, ""box"": [0, 0, 1300, 641], ""aspect_ratio_changed"": true}",95,1300,956,1300,641
+case_24,data/media/case_24/original.jpg,data/transformed/case_24/crop_offcentre_bottom67.jpg,crop_offcentre,bottom67,"{""side"": ""bottom"", ""kept_percent"": 67, ""box"": [0, 315, 1300, 956], ""aspect_ratio_changed"": true}",95,1300,956,1300,641
+case_24,data/media/case_24/original.jpg,data/transformed/case_24/resize_50.jpg,resize,50,"{""percent"": 50}",95,1300,956,650,478
+case_24,data/media/case_24/original.jpg,data/transformed/case_24/resize_25.jpg,resize,25,"{""percent"": 25}",95,1300,956,325,239
+case_24,data/media/case_24/original.jpg,data/transformed/case_24/re_encode_q90.jpg,re_encode,q90,"{""jpeg_quality"": 90}",90,1300,956,1300,956
+case_24,data/media/case_24/original.jpg,data/transformed/case_24/re_encode_q70.jpg,re_encode,q70,"{""jpeg_quality"": 70}",70,1300,956,1300,956
+case_24,data/media/case_24/original.jpg,data/transformed/case_24/re_encode_q50.jpg,re_encode,q50,"{""jpeg_quality"": 50}",50,1300,956,1300,956
+case_24,data/media/case_24/original.jpg,data/transformed/case_24/screenshot_s90q75.jpg,screenshot,s90q75,"{""scale"": 0.9, ""jpeg_quality"": 75}",75,1300,956,1170,860
+case_24,data/media/case_24/original.jpg,data/transformed/case_24/mirror_h.jpg,mirror,h,"{""axis"": ""horizontal""}",95,1300,956,1300,956
+case_24,data/media/case_24/original.jpg,data/transformed/case_24/text_overlay_bar.jpg,text_overlay,bar,"{""style"": ""caption_bar"", ""bar_height_pct"": 14, ""text"": ""BREAKING: Happening right now""}",95,1300,956,1300,956
+case_24,data/media/case_24/original.jpg,data/transformed/case_24/text_overlay_meme.jpg,text_overlay,meme,"{""style"": ""meme_block"", ""text_top"": ""This is happening right now"", ""text_bottom"": ""They don't want you to see this""}",95,1300,956,1300,956
+case_24,data/media/case_24/original.jpg,data/transformed/case_24/logo_corner.jpg,logo,corner,"{""position"": ""bottom_right"", ""width_px"": 286}",95,1300,956,1300,956
+case_25,data/media/case_25/original.jpg,data/transformed/case_25/none_original.jpg,none,original,{},95,2048,1367,2048,1367
+case_25,data/media/case_25/original.jpg,data/transformed/case_25/crop_5.jpg,crop,5,"{""percent"": 5, ""mode"": ""total"", ""box"": [51, 34, 1997, 1333]}",95,2048,1367,1946,1299
+case_25,data/media/case_25/original.jpg,data/transformed/case_25/crop_10.jpg,crop,10,"{""percent"": 10, ""mode"": ""total"", ""box"": [102, 68, 1946, 1299]}",95,2048,1367,1844,1231
+case_25,data/media/case_25/original.jpg,data/transformed/case_25/crop_20.jpg,crop,20,"{""percent"": 20, ""mode"": ""total"", ""box"": [204, 136, 1844, 1231]}",95,2048,1367,1640,1095
+case_25,data/media/case_25/original.jpg,data/transformed/case_25/crop_30.jpg,crop,30,"{""percent"": 30, ""mode"": ""total"", ""box"": [307, 205, 1741, 1162]}",95,2048,1367,1434,957
+case_25,data/media/case_25/original.jpg,data/transformed/case_25/crop_40.jpg,crop,40,"{""percent"": 40, ""mode"": ""total"", ""box"": [409, 273, 1639, 1094]}",95,2048,1367,1230,821
+case_25,data/media/case_25/original.jpg,data/transformed/case_25/crop_offcentre_left67.jpg,crop_offcentre,left67,"{""side"": ""left"", ""kept_percent"": 67, ""box"": [0, 0, 1372, 1367], ""aspect_ratio_changed"": true}",95,2048,1367,1372,1367
+case_25,data/media/case_25/original.jpg,data/transformed/case_25/crop_offcentre_right67.jpg,crop_offcentre,right67,"{""side"": ""right"", ""kept_percent"": 67, ""box"": [676, 0, 2048, 1367], ""aspect_ratio_changed"": true}",95,2048,1367,1372,1367
+case_25,data/media/case_25/original.jpg,data/transformed/case_25/crop_offcentre_top67.jpg,crop_offcentre,top67,"{""side"": ""top"", ""kept_percent"": 67, ""box"": [0, 0, 2048, 916], ""aspect_ratio_changed"": true}",95,2048,1367,2048,916
+case_25,data/media/case_25/original.jpg,data/transformed/case_25/crop_offcentre_bottom67.jpg,crop_offcentre,bottom67,"{""side"": ""bottom"", ""kept_percent"": 67, ""box"": [0, 451, 2048, 1367], ""aspect_ratio_changed"": true}",95,2048,1367,2048,916
+case_25,data/media/case_25/original.jpg,data/transformed/case_25/resize_50.jpg,resize,50,"{""percent"": 50}",95,2048,1367,1024,684
+case_25,data/media/case_25/original.jpg,data/transformed/case_25/resize_25.jpg,resize,25,"{""percent"": 25}",95,2048,1367,512,342
+case_25,data/media/case_25/original.jpg,data/transformed/case_25/re_encode_q90.jpg,re_encode,q90,"{""jpeg_quality"": 90}",90,2048,1367,2048,1367
+case_25,data/media/case_25/original.jpg,data/transformed/case_25/re_encode_q70.jpg,re_encode,q70,"{""jpeg_quality"": 70}",70,2048,1367,2048,1367
+case_25,data/media/case_25/original.jpg,data/transformed/case_25/re_encode_q50.jpg,re_encode,q50,"{""jpeg_quality"": 50}",50,2048,1367,2048,1367
+case_25,data/media/case_25/original.jpg,data/transformed/case_25/screenshot_s90q75.jpg,screenshot,s90q75,"{""scale"": 0.9, ""jpeg_quality"": 75}",75,2048,1367,1843,1230
+case_25,data/media/case_25/original.jpg,data/transformed/case_25/mirror_h.jpg,mirror,h,"{""axis"": ""horizontal""}",95,2048,1367,2048,1367
+case_25,data/media/case_25/original.jpg,data/transformed/case_25/text_overlay_bar.jpg,text_overlay,bar,"{""style"": ""caption_bar"", ""bar_height_pct"": 14, ""text"": ""BREAKING: Happening right now""}",95,2048,1367,2048,1367
+case_25,data/media/case_25/original.jpg,data/transformed/case_25/text_overlay_meme.jpg,text_overlay,meme,"{""style"": ""meme_block"", ""text_top"": ""This is happening right now"", ""text_bottom"": ""They don't want you to see this""}",95,2048,1367,2048,1367
+case_25,data/media/case_25/original.jpg,data/transformed/case_25/logo_corner.jpg,logo,corner,"{""position"": ""bottom_right"", ""width_px"": 410}",95,2048,1367,2048,1367
