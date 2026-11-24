@@ -382,13 +382,22 @@ function extractMastodon(el, mediaEl) {
   const onPostPage = /^\/@[^/]+\/\d+/.test(location.pathname);
   if (!status) return { platform: "mastodon" };
 
-  const permalinkEl = status.querySelector("a.status__relative-time, a.detailed-status__datetime");
+  const idLink = [...status.querySelectorAll("a[href]")].find((a) =>
+    /\/@[^/]+\/\d+\/?$/.test(new URL(a.href, location.href).pathname));
+  const permalinkEl =
+    status.querySelector("a.status__relative-time, a.detailed-status__datetime") ||
+    status.querySelector("time")?.closest("a") ||
+    idLink;
   const postUrl =
     permalinkEl?.href || (onPostPage ? location.origin + location.pathname : null);
 
-  let handle = text(status.querySelector(".display-name__account"));
+  // Handle: from the permalink (/@user/<id>), which doesn't depend on class names.
+  let handle =
+    text(status.querySelector(".display-name__account")) ||
+    postUrl?.match(/\/@([^/]+)\/\d+/)?.[1] ||
+    null;
   if (handle && !handle.startsWith("@")) handle = "@" + handle;
-  const name = text(status.querySelector(".display-name__html"));
+  const name = text(status.querySelector(".display-name__html, .display-name strong, bdi"));
 
   // Mastodon post IDs contain the creation time: the top bits are milliseconds (ID >> 16).
   const timeEl = status.querySelector("time[datetime]");
@@ -402,11 +411,25 @@ function extractMastodon(el, mediaEl) {
 
   return {
     platform: "mastodon",
-    caption: text(status.querySelector(".status__content__text, .status__content")),
+    caption: mastodonCaption(status),
     author_name: name,
     author_handle: handle,
     timestamp,
     timestamp_source: timestampSource,
     post_url: postUrl,
   };
+}
+
+// The post text. Mastodon puts a lang="..." attribute on it in every version;
+// take the longest such element, ignoring the content-warning line.
+function mastodonCaption(status) {
+  const known = text(status.querySelector(".status__content__text"));
+  if (known) return known;
+  let best = null;
+  for (const n of status.querySelectorAll("[lang]")) {
+    const t = text(n);
+    if (!t || t.startsWith("Research demo:")) continue;
+    if (!best || t.length > best.length) best = t;
+  }
+  return best;
 }
