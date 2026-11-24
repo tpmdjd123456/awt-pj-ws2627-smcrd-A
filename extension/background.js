@@ -8,6 +8,7 @@ const SUPPORTED_SITES = [
   "https://twitter.com/*", // wasn't sure if the old adress should be added but here it is
   "https://www.instagram.com/*",
   "https://www.tiktok.com/*",
+  "https://mastodon.social/*"
 ];
 
 chrome.runtime.onInstalled.addListener(() => {

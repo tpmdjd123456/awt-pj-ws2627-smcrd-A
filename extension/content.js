@@ -1,4 +1,5 @@
-// Runs on X, Instagram and TikTok. Remembers what was right-clicked and reads the surrounding post. Selectors are best-effort: these sites change their HTML often.
+// Target platforms: X and Instagram (tested), Mastodon (demo feed), TikTok (implemented, not tested).
+// Remembers what was right-clicked and reads the surrounding post. Selectors are best-effort: these sites change their HTML often.
 let last = { target: null, x: 0, y: 0 };
 
 let cached = null;
@@ -37,6 +38,7 @@ function capture() {
     if (/^\/reels?\//.test(location.pathname)) mediaEl = mostVisibleVideo() || mediaEl;
     post = extractInstagram(el, mediaEl);
   } else if (host.endsWith("tiktok.com")) post = extractTikTok(el);
+  else if (document.getElementById("mastodon")) post = extractMastodon(el, mediaEl);
   else return { found: false };
 
   const media = mediaInfo(mediaEl);
@@ -369,6 +371,42 @@ function extractTikTok(el) {
     author_handle: handle,
     timestamp,
     timestamp_source: timestamp ? "video_id" : null,
+    post_url: postUrl,
+  };
+}
+
+// Specifically for Mastodon (our demo feed). Works on any instance: the web app is the same.
+function extractMastodon(el, mediaEl) {
+  const start = mediaEl || el;
+  const status = start.closest(".detailed-status, .status") || start.closest("article");
+  const onPostPage = /^\/@[^/]+\/\d+/.test(location.pathname);
+  if (!status) return { platform: "mastodon" };
+
+  const permalinkEl = status.querySelector("a.status__relative-time, a.detailed-status__datetime");
+  const postUrl =
+    permalinkEl?.href || (onPostPage ? location.origin + location.pathname : null);
+
+  let handle = text(status.querySelector(".display-name__account"));
+  if (handle && !handle.startsWith("@")) handle = "@" + handle;
+  const name = text(status.querySelector(".display-name__html"));
+
+  // Mastodon post IDs contain the creation time: the top bits are milliseconds (ID >> 16).
+  const timeEl = status.querySelector("time[datetime]");
+  let timestamp = timeEl?.getAttribute("datetime") || null;
+  let timestampSource = timestamp ? "page" : null;
+  const id = postUrl?.match(/\/(\d+)\/?$/)?.[1];
+  if (!timestamp && id) {
+    timestamp = new Date(Number(BigInt(id) >> 16n)).toISOString();
+    timestampSource = "post_id";
+  }
+
+  return {
+    platform: "mastodon",
+    caption: text(status.querySelector(".status__content__text, .status__content")),
+    author_name: name,
+    author_handle: handle,
+    timestamp,
+    timestamp_source: timestampSource,
     post_url: postUrl,
   };
 }
