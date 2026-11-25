@@ -33,3 +33,5 @@ The main type is the one the false claim depends on most.
 | ai_edit | A real photo was altered with AI tools (for example, a person or object added). Only used when the real original is identified. |
 
 If several apply (for example crop and text overlay), use `multiple` and list them in `notes`.
+
+`embedded_date` is left empty when no date is visible inside the image; none of the reused images in the current corpus shows one.

@@ -46,6 +46,7 @@ The French student protests of autumn 2026 are the motivating case study. The
 evaluation corpus is deliberately **cross-event**, so results show whether the
 system generalises rather than whether it was tuned to one event's
 transformation patterns: [`docs/scope.md`](docs/scope.md).
+The dataset lives in `data/dataset.csv` (UTF-8 with BOM), the only canonical file: edit it in Excel locally if you like, but export to CSV and run `python tools/check_dataset.py` before every commit.
 
 ## Pipeline
 
@@ -137,7 +138,7 @@ durable copy.
 
 ### Measured results
 
-| | real reuse (10 cases) | synthetic variants (150) |
+| | real reuse (25 cases) | synthetic variants (500) |
 | --- | --- | --- |
 | recall | **4/10 (40%)** | **133/150 (89%)** |
 | false positives | 0 in 90 | 0 in 1,350 |

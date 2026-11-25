@@ -18,6 +18,8 @@ Conventions
                  sides (crop_10 -> 5% off each edge). Change CROP_MODE to
                  "per_edge" to remove p% from EACH edge instead (40% per edge
                  leaves only 20% of the image - probably too brutal).
+- crop_offcentre: keeps only the left/right/top/bottom 67% (aspect ratio changes, subject
+                 moves off-centre). The centred crops above keep the aspect ratio.
 - resize       : 50% / 25% of original width and height.
 - re_encode    : original size, JPEG quality 90 / 70 / 50.
 - screenshot   : scale to 90% + JPEG q75 (what a screen capture roughly does).
@@ -102,6 +104,18 @@ def t_crop(p):
         dx, dy = (int(w * frac), int(h * frac)) if CROP_MODE == "per_edge" else (int(w * frac / 2), int(h * frac / 2))
         box = (dx, dy, w - dx, h - dy)
         return img.crop(box), {"percent": p, "mode": CROP_MODE, "box": box}
+    return f
+
+
+def t_crop_offcentre(side, pct=67):
+    """Keep only the left/right/top/bottom pct%: aspect ratio changes and the subject moves
+    off-centre, like most real-world reuse (centred crops preserve aspect ratio)."""
+    def f(img):
+        w, h = img.size
+        kw, kh = round(w * pct / 100), round(h * pct / 100)
+        box = {"left": (0, 0, kw, h), "right": (w - kw, 0, w, h),
+               "top": (0, 0, w, kh), "bottom": (0, h - kh, w, h)}[side]
+        return img.crop(box), {"side": side, "kept_percent": pct, "box": box, "aspect_ratio_changed": True}
     return f
 
 
@@ -211,7 +225,9 @@ def t_logo(img):
 # (transformation, strength label, function, jpeg quality for the saved file)
 VARIANTS = (
     [("none", "original", t_none, BASE_QUALITY)]
-    + [("crop", str(p), t_crop(p), BASE_QUALITY) for p in (10, 20, 30, 40)]
+    + [("crop", str(p), t_crop(p), BASE_QUALITY) for p in (5, 10, 20, 30, 40)]
+    + [("crop_offcentre", f"{side}67", t_crop_offcentre(side), BASE_QUALITY)
+       for side in ("left", "right", "top", "bottom")]
     + [("resize", str(p), t_resize(p), BASE_QUALITY) for p in (50, 25)]
     + [("re_encode", f"q{q}", t_reencode(q), q) for q in (90, 70, 50)]
     + [("screenshot", "s90q75", t_screenshot, 75)]
