@@ -1,7 +1,10 @@
-// Service worker: context menu → capture from page → stub service → side panel.
-const CALL_SERVICE = true; // for now no call to the verification service. Set CALL_SERVICE = true only to try the panel against the local stub (uvicorn on :8000); keep it false in commits until week 2
+// Service worker: context menu → capture from page → verification service → side panel.
+const CALL_SERVICE = true; // the service is real now (uvicorn on :8000). Set false to inspect the capture alone, without calling it.
 const SERVICE_URL = "http://localhost:8000";
-const USE_EMPTY_STUB = true; // true = test the "no evidence" response (?empty=true)
+// Left over from the stub, which took ?empty=true to force a no-evidence reply.
+// The real /verify ignores it. Keep false; to see the empty state, query an image
+// that is not in the index — that is the honest way to produce it.
+const USE_EMPTY_STUB = false;
 
 const SUPPORTED_SITES = [
   "https://x.com/*",

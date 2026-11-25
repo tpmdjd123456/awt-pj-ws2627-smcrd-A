@@ -53,8 +53,16 @@ function render({ capture, result, status, error }) {
   fill(resultDl, [
     ["Confidence tier", result.confidence_tier],
     ["Earliest known appearance", e
-      ? `${e.date} · ${e.source} (${e.evidence_type}${e.distance != null ? `, distance ${e.distance}` : ""})`
+      ? `${e.date} · ${e.source} (${e.evidence_type})`
       : "No earlier appearance found — this is not a clearance."],
+    // A distance only means something next to the measure that produced it:
+    // crop_segments 6 and pdq 6 are not the same claim, and the same match can
+    // read 6 on one scale and 118 on the other. See docs/api.md.
+    ["Match", e && e.method ? `${e.method}, distance ${e.distance}` : null],
+    // Hashing recovers mirrored and rotated copies, and when it does the image
+    // shown here visibly differs from the one the user right-clicked. Saying so
+    // explains the difference instead of looking like a mistake.
+    ["Orientation", e?.orientation ? `${e.orientation.replace(/_/g, " ")} relative to the post` : null],
     ["Earliest caption", e?.caption],
     ["Attested context", a ? `${a.description} — ${a.location ?? ""}, ${a.date ?? ""}` : "None"],
     ["Attested by", a ? `${a.source} (${a.evidence_type})` : null],

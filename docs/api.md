@@ -210,8 +210,8 @@ field (see [`terminology.md`](terminology.md)). It gets filled once the
 fact-check probe exists, or from a C2PA manifest that carries a caption.
 
 `earliest_known_appearance` is real whenever `phash` fires, and limited to our
-own 10-case index until reverse search is wired in. Recall is **4/10 on real
-reuse** and **133/150 on synthetic transformations** — both correct, measuring
+own 25-case index until reverse search is wired in. Recall is **13/25 on real
+reuse** and **373/500 on synthetic transformations** — both correct, measuring
 different things: [`findings-hashing.md`](findings-hashing.md).
 
 For the panel, the practical consequence is that **`no_evidence` is a common

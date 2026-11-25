@@ -140,19 +140,25 @@ durable copy.
 
 | | real reuse (25 cases) | synthetic variants (500) |
 | --- | --- | --- |
-| recall | **4/10 (40%)** | **133/150 (89%)** |
-| false positives | 0 in 90 | 0 in 1,350 |
+| recall | **13/25 (52%)** | **373/500 (75%)** |
+| false positives, `strong` | 0 in 600 | 0 in 12,000 |
+| false positives, `candidate` | 0 | 1 |
 
 Both are correct, and the gap is the finding. Compression, resizing,
-screenshots, watermarks, text overlays and mirroring are all recovered 10/10.
-Cropping is the break-point: full recall at 10%, 8/10 at 20%, then collapse —
-3/10 at 30%.
+screenshots, watermarks, text overlays and mirroring are all recovered 25/25.
+Cropping is the break-point: full recall at 5% and 10%, 14/25 at 20%, then
+collapse — 5/25 at 30%.
 
-The synthetic crops are centred and preserve aspect ratio, but **8 of the 10
-real reused copies changed aspect ratio** — reframed by hand rather than
-resized — and hashing finds only 1 of 5 real crops. So the synthetic curve
-locates break-points well and **overstates real-world recall**. Quote both
-numbers, not one.
+By transformation on real reuse: **resizes 8/8, crops 4/14**, AI edits 1/2.
+Real crops are heavy and off-centre, which is what a global hash cannot
+survive. The off-centre synthetic crops reproduce that (4–10 of 25), so the
+synthetic set now brackets reality rather than flattering it — but it still
+**overstates real-world recall**. Quote both numbers, not one.
+
+Thresholds are a property of the corpus, not the algorithm: two of the three
+had to be re-derived when the dataset grew from 10 cases to 25, and the
+crop-resistant rule produced 8 false positives at 25 that did not exist at 10.
+**Re-run both evaluations after adding cases.**
 
 Thresholds, the measurements behind them, the mirroring blind spot and what to
 do about crops: [`docs/findings-hashing.md`](docs/findings-hashing.md).

@@ -196,6 +196,316 @@
     "b2b8cc11153a387a",
     "f3730dfef7e3c37c"
    ]
+  },
+  {
+   "case_id": "case_11",
+   "event": "Israeli strikes on Beirut, Oct 2024",
+   "path": "data/media/case_11/original.jpg",
+   "earliest_date": "2023-10-09",
+   "earliest_source": "AFP via Getty Images",
+   "earliest_url": "https://www.gettyimages.in/detail/news-photo/fireball-erupts-from-an-israeli-airstrike-in-gaza-city-on-news-photo/1715817216",
+   "earliest_caption": "TOPSHOT - A fireball erupts from an Israeli airstrike in Gaza City on October 9, 2023. The death toll from the unprecedented assault by Palestinian militant group Hamas on its territory rose to 900 in Israel, which has retaliated with a withering barrage of strikes on Gaza, raising the death toll there to 687.",
+   "pdq": "24a2d955124ecb48a7bd25a67593fe97cb0cb348a6ed6ca4565623b6994b9c58",
+   "pdq_quality": 100,
+   "phash": "968d69b63592db21",
+   "dhash": "ecf2f83c7c7c3438",
+   "crop_resistant": [
+    "98a6e85c7c387830",
+    "ecf2f83c7c7c3438"
+   ]
+  },
+  {
+   "case_id": "case_12",
+   "event": "Shooting at a US campaign rally, 13 Jul 2024",
+   "path": "data/media/case_12/original.jpg",
+   "earliest_date": "2022-09-18",
+   "earliest_source": "Reuters (Gaelen Morse)",
+   "earliest_url": "https://www.reutersconnect.com/item/former-us-president-trump-holds-a-rally-in-ohio/dGFnOnJldXRlcnMuY29tLDIwMjI6bmV3c21sX1JDMkNKVzlDRVJHWg",
+   "earliest_caption": "Former U.S. president Donald Trump listens as JD Vance speaks during a rally in Youngstown, Ohio, U.S., September 17, 2022.",
+   "pdq": "b093151d0f6c692c7826d69385d3ea4b58594b764b68f8ebd587a7b916785506",
+   "pdq_quality": 100,
+   "phash": "86b00f4e706b8bb7",
+   "dhash": "8ca4dcd554756163",
+   "crop_resistant": [
+    "f8fc96c2f8f8f8fc",
+    "f0b85caeb6f67b3d",
+    "d8f4f8ece6e6ee6e",
+    "fefefefffeffffff",
+    "8ca4dcd554756163"
+   ]
+  },
+  {
+   "case_id": "case_13",
+   "event": "Claimed new COVID wave in China, Dec 2024",
+   "path": "data/media/case_13/original.jpg",
+   "earliest_date": "2023-01-05",
+   "earliest_source": "AP (Andy Wong)",
+   "earliest_url": "https://newsroom.ap.org/editorial-photos-videos/detail?mediatype=photo&utm_source=apnews&utm_campaign=gallery&itemid=b354f77e288841909619836d97521b73",
+   "earliest_caption": "Patients receive intravenous drips at the emergency ward of a hospital in Beijing, Thursday, Jan. 5, 2023. Patients, most of them elderly, are lying on stretchers in hallways and taking oxygen while sitting in wheelchairs as COVID-19 surges in China's capital Beijing.",
+   "pdq": "be8121bc486faaea0fd8dc2e30d9947a485307b80ca539b8a626e76cf54b1ef5",
+   "pdq_quality": 100,
+   "phash": "e2d7e91b320ed20e",
+   "dhash": "9919c5c5edc9c787",
+   "crop_resistant": [
+    "f7b011d090d1b012",
+    "f8d6ddf9f9f9f9f9",
+    "00006078f0f2f0b8",
+    "8181c170f1f171b0",
+    "1a1a16a28a8a98c9",
+    "38f0e4b096068400",
+    "5ec9edefc7cde3f2",
+    "a3fefefefec7d3fb",
+    "9919c5c5edc9c787"
+   ]
+  },
+  {
+   "case_id": "case_14",
+   "event": "Claimed bombing in New York, Jan 2023",
+   "path": "data/media/case_14/original.jpg",
+   "earliest_date": "2017-12-11",
+   "earliest_source": "AP (Andres Kudacki) via NBC News",
+   "earliest_url": "https://www.nbcnews.com/news/us-news/nyc-authorities-respond-explosion-port-authority-bus-terminal-n828331",
+   "earliest_caption": "Law enforcement officials at the scene of an explosion Monday near Times Square in New York.",
+   "pdq": "8b5adbc1c436163935ad641ecd3c20e39fb945a4f7451609b7daf055700b6b66",
+   "pdq_quality": 100,
+   "phash": "b533e8d52dc8d312",
+   "dhash": "9a5ed96756d8a5d3",
+   "crop_resistant": [
+    "269cd8646cc9a72e",
+    "d2b2cae9e9e9c0b4",
+    "d24beaccce83c5b4",
+    "0edee6476262444c",
+    "9a5ed96756d8a5d3"
+   ]
+  },
+  {
+   "case_id": "case_15",
+   "event": "Claimed anti-war protest in Ukraine, Sept 2023",
+   "path": "data/media/case_15/original.jpg",
+   "earliest_date": "2018-11-10",
+   "earliest_source": "Stefano Guidi / ZUMA Wire",
+   "earliest_url": "https://www.alamy.com/turin-piedmont-italy-10th-nov-2018-turin-italy-november-10-2018-people-during-the-demonstration-of-the-si-tav-citizens-in-favor-of-the-construction-of-the-tav-demonstration-with-40-thousand-demonstrators-take-part-on-piazza-castello-the-tav-is-a-project-of-an-international-railway-line-of-235-km-aimed-at-transporting-goods-and-passengers-between-turin-and-lyon-which-would-support-the-existing-line-between-the-two-cities-credit-stefano-guidizuma-wirealamy-live-news-image224767025.html",
+   "earliest_caption": "Turin, Piedmont, Italy. 10th Nov, 2018. Turin, Italy-November 10, 2018: People during the demonstration of the Si Tav, citizens in favor of the construction of the TAV demonstration with 40 thousand demonstrators take part on Piazza Castello. The TAV is a project of an international railway line of 235 km aimed at transporting goods and passengers between Turin and Lyon, which would support the existing line between the two cities.",
+   "pdq": "6d78004abde44593eac3aeefd891ccba94acf34461267dd49444aaa6459bff09",
+   "pdq_quality": 100,
+   "phash": "c9cdecb211b53615",
+   "dhash": "f2a3aa52b905542b",
+   "crop_resistant": [
+    "f2f8f3a3a3e38aea",
+    "e56464f46565b96a",
+    "8caaa79ee220bc8c",
+    "a3aa52780d157a23"
+   ]
+  },
+  {
+   "case_id": "case_16",
+   "event": "Dismissal of Ukraine's defence minister, Sept 2023",
+   "path": "data/media/case_16/original.jpg",
+   "earliest_date": "2020-02-14",
+   "earliest_source": "Oleksii Reznikov (Facebook page)",
+   "earliest_url": "https://www.facebook.com/1224903319/posts/10222013700671315/",
+   "earliest_caption": "Valentine's Day. Heart cards dominate all the feeds today. Once, when I left public service, I made a post saying my plans were to finish my studies and finish falling in love. Plans always come true if you consciously send a request out into the Universe. She said \"Yes\"! Yulia Zoriy, time to confess to the world!!! ))))",
+   "pdq": "a7d162c78a779bd1cf91323366f8999050164c7a3dacf60790ce6c0e1ca7cd6c",
+   "pdq_quality": 100,
+   "phash": "b99bf098b9f0902d",
+   "dhash": "19f16f0273330607",
+   "crop_resistant": [
+    "1939391999d861f3",
+    "b0f078bac4f8f8b7",
+    "f8e186963418c070",
+    "76d6444fc6d19b9b",
+    "c0a0989ec831e4d8",
+    "109a862a1808cc7b",
+    "dce865f9e8309030",
+    "3570b838d3b393d1",
+    "ce789c9c86ca6260",
+    "1e3e7f532309c1f1",
+    "99f72b1673360607"
+   ]
+  },
+  {
+   "case_id": "case_17",
+   "event": "Anti-migrant protests in South Africa, May 2026",
+   "path": "data/media/case_17/original.jpg",
+   "earliest_date": "2022-02-13",
+   "earliest_source": "AFP via Getty Images (Guillem Sartorio)",
+   "earliest_url": "https://www.gettyimages.de/detail/nachrichtenfoto/members-of-the-anti-foreigners-movement-so-called-nachrichtenfoto/1238445287",
+   "earliest_caption": "TOPSHOT - Members of the anti-foreigners movement so called 'Operation Dudula\" wearing only their bra as a sign of discontent march during a gathering in Orange Grove in Johannesburg on February 13, 2022. - South African police said they fired rubber bullets at demonstrators gathered in Johannesburg on Sunday to protest against migrant workers, also using stun grenades to try to disperse the group of around 200 people.",
+   "pdq": "ef6f66b7d5139c23b22c4b9c261a9865e5a677ab14a58cc61318cf30dbc4ca58",
+   "pdq_quality": 100,
+   "phash": "d90d91868cb572ee",
+   "dhash": "f272501223999b1b",
+   "crop_resistant": [
+    "c8c6d6c2e24d6666",
+    "c1f16a31e8ad2d3d",
+    "2636968803662627",
+    "f471b9b961646cbe",
+    "212d20ecece4d9a4",
+    "71c7cb8f8c0999db",
+    "f272501223999b1b",
+    "f1310b0725a48d99"
+   ]
+  },
+  {
+   "case_id": "case_18",
+   "event": "Glastonbury Festival 2022, claimed litter after a climate speech",
+   "path": "data/media/case_18/original.jpg",
+   "earliest_date": "2015-06-29",
+   "earliest_source": "David Hedges SWNS via Daily Mail",
+   "earliest_url": "https://www.dailymail.com/news/article-3142856/As-year-s-Glastonbury-closes-big-clean-begins.html",
+   "earliest_caption": "Abandoned: After more than 100,000 people packed in to watch Lionel Richie perform last night, the Pyramid Stage cuts a lonely figure",
+   "pdq": "6e63bba6c0f90d58320bac954fb43f51704bf348cd7c87f51c831e8e160ce971",
+   "pdq_quality": 100,
+   "phash": "c7c798b860579f09",
+   "dhash": "f068694c96e0e8f0",
+   "crop_resistant": [
+    "e0f06869694c4c86",
+    "74f3b2e4f264624e",
+    "694c4c96f060f0f4"
+   ]
+  },
+  {
+   "case_id": "case_19",
+   "event": "Kenya anti-tax protests, June 2024",
+   "path": "data/media/case_19/original.jpg",
+   "earliest_date": "2017-11-19",
+   "earliest_source": "Barlamane via AFP",
+   "earliest_url": "https://barlamane.com/%d8%a7%d9%84%d8%b4%d8%b9%d8%a8-%d9%8a%d8%ad%d8%aa%d9%81%d9%84-%d9%85%d8%b9-%d8%a7%d9%84%d8%ac%d9%8a%d8%b4-%d8%a7%d9%84%d8%b2%d9%8a%d9%85%d8%a8%d8%a7%d8%a8%d9%88%d9%8a-%d8%a8%d8%b3%d9%82%d9%88%d8%b7/",
+   "earliest_caption": "People celebrate Mugabe's downfall with Zimbabwean military in massive rallies (photos).",
+   "pdq": "6682d1b0862f1ddd7b7e9d23a3bf6dd1143c6e45e3a2028a3eb851696d16f032",
+   "pdq_quality": 100,
+   "phash": "9ba634db4f28e251",
+   "dhash": "6f36d9d170d13155",
+   "crop_resistant": [
+    "25a9b1e99fa1ba46",
+    "749c4366b6a14d2d",
+    "1ef4e404248c0951",
+    "d6c5a7acbd1f961a",
+    "e4f0d1ccb2f1cf6f",
+    "ccdadeeefe5a888e",
+    "e66626f4666b5b63",
+    "d44ceeca6366c6e6",
+    "6f36d9d170d13155"
+   ]
+  },
+  {
+   "case_id": "case_20",
+   "event": "Russian invasion of Ukraine, Feb 2022",
+   "path": "data/media/case_20/original.jpg",
+   "earliest_date": "2021-12-06",
+   "earliest_source": "Anadolu Agency via Getty Images",
+   "earliest_url": "https://www.gettyimages.de/detail/nachrichtenfoto/ukrainian-president-volodymyr-zelensky-visits-the-nachrichtenfoto/1237056843",
+   "earliest_caption": "Ukrainian President Volodymyr Zelensky visits Donbass DONBASS, UKRAINE - DECEMBER 06: Ukrainian President Volodymyr Zelensky visits the front-line positions of Ukrainian military in Donbass, Ukraine on December 06, 2021.",
+   "pdq": "2961a06da66cb82527752e558cd599d92d1a8d9ab1b356da54da51f05a9ece66",
+   "pdq_quality": 100,
+   "phash": "89b33c872d2de62c",
+   "dhash": "d6d8e3d2cbe3f030",
+   "crop_resistant": [
+    "e2c9a0cc4c6a43db",
+    "d6d8e3d2cbe3f030"
+   ]
+  },
+  {
+   "case_id": "case_21",
+   "event": "Trump rally in Waukesha, Wisconsin, Aug 2022",
+   "path": "data/media/case_21/original.jpeg",
+   "earliest_date": "2020-11-16",
+   "earliest_source": "EricTrump via X",
+   "earliest_url": "https://x.com/EricTrump/status/1328334898655096832",
+   "earliest_caption": "Biden couldn\u2019t get 10 people to a rally & went days without leaving his house. @realDonaldTrump received 11 million more votes than 2016,  nearly doubled African American support - this was every stop, multiple times a day. This election was rigged from the beginning.",
+   "pdq": "d92bca572654f48e19a94be1c77234d6fc3d49a9da03a4d5857810a84ab77e56",
+   "pdq_quality": 100,
+   "phash": "a935768a8f5561ca",
+   "dhash": "030a829673031408",
+   "crop_resistant": [
+    "c9c9c8cac9c3db79",
+    "3232726e0da5302c",
+    "808482828882a6f6",
+    "030a829673031408"
+   ]
+  },
+  {
+   "case_id": "case_22",
+   "event": "Euro 2024 in Germany",
+   "path": "data/media/case_22/original.jpeg",
+   "earliest_date": "2022-10-30",
+   "earliest_source": "StopAntisemites via X",
+   "earliest_url": "https://x.com/StopAntisemites/status/1586736072779866113",
+   "earliest_caption": "We are nauseated to see a man has dressed up as Adolf Hitler to celebrate Halloween at the U. Wisconsin Madison. With antisemitic incidents on the rise at both this particular school and across the country, this costume was meant to do one thing, and one thing only - spread hate",
+   "pdq": "04e58dc3db88c89eb07df0fcc076f92802bf7a7662432d92343c46b7af029dcb",
+   "pdq_quality": 100,
+   "phash": "d56920769ea66137",
+   "dhash": "90d1d6456c44cca8",
+   "crop_resistant": [
+    "c0e0f0e0f0f0fcdc",
+    "68e4e464246424ac",
+    "f93860259c985859",
+    "e6e4e4e0f86c3932",
+    "e0ed6cdc0e1e4f1b",
+    "1806c2c0c092f273",
+    "616023647cc6f07c",
+    "1a7cb2f0d8f0d0e4",
+    "90d1d6456c44cca8"
+   ]
+  },
+  {
+   "case_id": "case_23",
+   "event": "Russian invasion of Ukraine, Feb 2022",
+   "path": "data/media/case_23/original.jpg",
+   "earliest_date": "2016-03-22",
+   "earliest_source": "Dmitry Muravsky",
+   "earliest_url": "https://www.facebook.com/photo/?fbid=961515343924347&set=a.961515073924374",
+   "earliest_caption": "",
+   "pdq": "45176f2f1d89ec1b14d793e941036fce99b1a4bf144e9b736663c99d15113544",
+   "pdq_quality": 100,
+   "phash": "8b91c45ce367b076",
+   "dhash": "f8fc7b5b53337373",
+   "crop_resistant": [
+    "f8fc7b5b53337373",
+    "e46edcc4c2c1a0b2",
+    "f8fcdadb5233f3f3"
+   ]
+  },
+  {
+   "case_id": "case_24",
+   "event": "Australian \"freedom convoy\" rallies, Feb 2022",
+   "path": "data/media/case_24/original.jpg",
+   "earliest_date": "2019-06-27",
+   "earliest_source": "Alamy",
+   "earliest_url": "https://www.alamy.com/an-aerial-view-of-the-glastonbury-festival-site-at-worthy-farm-in-somerset-image258377784.html",
+   "earliest_caption": "An aerial view of the Glastonbury Festival site at Worthy Farm in Somerset.",
+   "pdq": "7ef0313ebc9c0cd9fe60173f8199c8840567f241891f7ef4904fffb0203d9e05",
+   "pdq_quality": 100,
+   "phash": "85d05e8679977cc1",
+   "dhash": "20f0b25ad6746463",
+   "crop_resistant": [
+    "0000000001042449",
+    "64f0b4b2e656ca2f",
+    "05a29866583972b6",
+    "29d5c0d29a91d3cb",
+    "60f0d65af674e423"
+   ]
+  },
+  {
+   "case_id": "case_25",
+   "event": "Australian \"freedom convoy\" rallies, Feb 2022",
+   "path": "data/media/case_25/original.jpg",
+   "earliest_date": "2009-05-28",
+   "earliest_source": "Barry Z Levine via Getty Images",
+   "earliest_url": "https://www.gettyimages.de/detail/nachrichtenfoto/aerial-view-of-the-massive-crowd-in-attendance-at-the-nachrichtenfoto/88031580",
+   "earliest_caption": "Aerial view of the massive crowd in attendance at the Woodstock Music and Arts Fair in Bethel, New York, August 15 - 17 (and part of the 18th), 1969.",
+   "pdq": "1bf1e4668e04471f916c7f993813a5c73eb367e6cd6ce34846cce91d18e36218",
+   "pdq_quality": 100,
+   "phash": "c38c63dc98899bb3",
+   "dhash": "e0ccc8f080a08008",
+   "crop_resistant": [
+    "e0e0e0e0e0e0e0e8",
+    "c6ecf8d0c4a08548",
+    "8bc3c28c09d4d269",
+    "a4ccf8a088808008",
+    "e6fe9cdb6ffde1cd",
+    "7448b9330fde7efb"
+   ]
   }
  ]
 }

@@ -48,14 +48,28 @@ PROBE_NAME = "phash"
 
 INDEX_PATH = Path("data/hash_index.json")
 
-# Thresholds derived from the 10 real pairs in data/dataset.csv plus every
-# original compared against every other original. See docs/findings-hashing.md
-# for the measurements these come from. Re-derive them when the dataset grows.
-PDQ_STRONG = 31          # Meta's own guidance; our unrelated floor is 104
+# Thresholds derived from the 25 real pairs in data/dataset.csv, the 500
+# generated variants in data/transformed/, and every original compared against
+# every other original. See docs/findings-hashing.md for the measurements.
+#
+# RE-DERIVE THESE WHENEVER THE DATASET GROWS. They have now failed twice that
+# way: a bigger index means more chances to collide, so a threshold that was
+# clean at 10 cases produced 8 false positives at 25. Run
+# tools/evaluate_hashing.py and tools/evaluate_transformations.py after adding
+# cases, and do not assume the old numbers still hold.
+PDQ_STRONG = 31          # Meta's own guidance; our unrelated floor is 94 at 25 cases
 PHASH_CANDIDATE = 18     # 20 false-positived; 18 is safe once weak leads are
                          # suppressed in the presence of a strong match (below)
-CROP_SEGMENT_DIST = 16   # max per-segment distance for a crop-resistant match
-CROP_MIN_SEGMENTS = 2    # one matched segment is a coincidence — it false-positived
+
+# Crop-resistant matching trades segment count against per-segment distance.
+# At 25 cases a flat "2 segments within 16" produced 8 false positives, every
+# one of them at a distance of exactly 16 — while genuine matches sat at either
+# 3 segments/distance 16 or 2 segments/distance 4. One loose segment pair is a
+# coincidence; three agreeing segments, or two very close ones, are not.
+CROP_TIERS = (
+    (3, 16),   # 3+ segments: distance up to 16
+    (2, 8),    # exactly 2 segments: distance must be 8 or better
+)
 
 # pdqhash.compute_dihedral returns 8 hashes in a fixed order. These labels say
 # how the QUERY differs from the indexed original when that slot is the match,
@@ -259,16 +273,18 @@ def _strength(r: dict[str, Any]) -> tuple[str, str | None, int | None]:
     """
     if r["pdq_distance"] <= PDQ_STRONG:
         return "strong", "pdq", r["pdq_distance"]
-    if (
-        r["crop_segments_matched"]
-        and r["crop_segments_matched"] >= CROP_MIN_SEGMENTS
-        and r["crop_distance"] is not None
-        and r["crop_distance"] <= CROP_SEGMENT_DIST
-    ):
+    if _crop_match(r["crop_segments_matched"], r["crop_distance"]):
         return "strong", "crop_segments", r["crop_distance"]
     if r["phash_distance"] <= PHASH_CANDIDATE:
         return "candidate", "phash", r["phash_distance"]
     return "none", None, None
+
+
+def _crop_match(segments: int | None, distance: int | None) -> bool:
+    """Does this clear any CROP_TIERS rule? More segments buys a looser distance."""
+    if not segments or distance is None:
+        return False
+    return any(segments >= n and distance <= d for n, d in CROP_TIERS)
 
 
 def best_match(data: bytes, index: dict[str, Any] | None = None) -> dict[str, Any] | None:
