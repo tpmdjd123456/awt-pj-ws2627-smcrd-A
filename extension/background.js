@@ -1,13 +1,14 @@
 // Service worker: context menu → capture from page → stub service → side panel.
-const CALL_SERVICE = false; // for now no call to the verification service. Set CALL_SERVICE = true only to try the panel against the local stub (uvicorn on :8000); keep it false in commits until week 2
+const CALL_SERVICE = true; // for now no call to the verification service. Set CALL_SERVICE = true only to try the panel against the local stub (uvicorn on :8000); keep it false in commits until week 2
 const SERVICE_URL = "http://localhost:8000";
-const USE_EMPTY_STUB = false; // true = test the "no evidence" response (?empty=true)
+const USE_EMPTY_STUB = true; // true = test the "no evidence" response (?empty=true)
 
 const SUPPORTED_SITES = [
   "https://x.com/*",
   "https://twitter.com/*", // wasn't sure if the old adress should be added but here it is
   "https://www.instagram.com/*",
   "https://www.tiktok.com/*",
+  "https://mastodon.social/*"
 ];
 
 chrome.runtime.onInstalled.addListener(() => {
@@ -70,7 +71,9 @@ async function handleClick(info, tab) {
   if (capture.media_url?.startsWith("blob:")) {
     capture.capture_error =
       (capture.capture_error ? capture.capture_error + " " : "") +
-      "Media URL is a blob: stream; the service can't download it. Use the post URL instead (week 2).";
+      (capture.video_poster
+        ? "Video stream (blob:) can't be downloaded; the service checks the video thumbnail instead."
+        : "Video stream (blob:) can't be downloaded and no thumbnail was found; see docs/video-blob.md.");
   }
 
   // Change in media URL expiry
@@ -88,7 +91,17 @@ async function handleClick(info, tab) {
     const res = await fetch(url, {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ media_url: capture.media_url }),
+      body: JSON.stringify({
+        // blob: URLs can't be downloaded; for videos send the thumbnail instead
+        media_url: capture.media_url?.startsWith("blob:")
+          ? capture.video_poster || capture.media_url
+          : capture.media_url,
+        post_url: capture.post_url,
+        post_caption: capture.post_caption,
+        post_date: capture.post_date,
+        post_author: capture.post_author,
+        platform: capture.platform,
+      }),
     });
     if (!res.ok) throw new Error(`Service answered ${res.status}`);
     await chrome.storage.session.set({ result: await res.json(), status: "done" });

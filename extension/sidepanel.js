@@ -14,8 +14,15 @@ function render({ capture, result, status, error }) {
   const statusEl = document.getElementById("status");
   if (status === "captured") statusEl.textContent = "Captured.";
   else if (status === "loading") statusEl.textContent = "Checking…";
-  else if (status === "error") statusEl.textContent = error;
-  else if (status === "done") statusEl.textContent = "Done (stubbed result).";
+  else if (status === "error") {
+    statusEl.textContent = "Verification service not reachable. The post details below were captured; try again in a moment.";
+    console.warn("[SMCRD]", error); // technical detail for us, not for the user
+  }
+  else if (status === "done") {
+    statusEl.textContent = result?.confidence_tier === "no_evidence"
+      ? "No earlier appearance found — this is not a clearance."
+      : "Done.";
+  }
 
   if (capture) {
     fill(document.getElementById("capture"), [
@@ -37,14 +44,17 @@ function render({ capture, result, status, error }) {
 
   const resultDl = document.getElementById("result");
   const raw = document.getElementById("raw");
-  document.getElementById("service").hidden = !result && status !== "loading" && status !== "error";
+  // Only shows the result block when there is a result. Captured data always stays visible.
+  document.getElementById("service").hidden = !result;
   if (!result) { resultDl.replaceChildren(); raw.textContent = ""; return; }
 
   const e = result.earliest_known_appearance;
   const a = result.attested_context;
   fill(resultDl, [
     ["Confidence tier", result.confidence_tier],
-    ["Earliest known appearance", e ? `${e.date} · ${e.source} (${e.evidence_type})` : "None found"],
+    ["Earliest known appearance", e
+      ? `${e.date} · ${e.source} (${e.evidence_type}${e.distance != null ? `, distance ${e.distance}` : ""})`
+      : "No earlier appearance found — this is not a clearance."],
     ["Earliest caption", e?.caption],
     ["Attested context", a ? `${a.description} — ${a.location ?? ""}, ${a.date ?? ""}` : "None"],
     ["Attested by", a ? `${a.source} (${a.evidence_type})` : null],
