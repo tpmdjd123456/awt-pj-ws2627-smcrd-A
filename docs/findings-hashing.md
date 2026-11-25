@@ -6,9 +6,18 @@ Two measurements, and they disagree. Read both.
 | --- | --- | --- |
 | what | the 25 reused copies found in the wild | 500 generated variants of the same 25 originals |
 | recall | **13/25 (52%)** | **373/500 (75%)** |
+| recall@3 and @5 | 13/25 — unchanged | — |
+| earliest-date accuracy | **13/13 of answered queries** | — |
 | false positives, `strong` tier | **0 in 600** | **0 in 12,000** |
 | false positives, `candidate` tier | 0 | 1 |
 | reproduce | `python tools/evaluate_hashing.py` | `python tools/evaluate_transformations.py` |
+
+Two results that are not in that table and matter as much:
+
+- **No image in the corpus carries a C2PA manifest** — 0 of 50, originals and
+  reused copies alike. [Ablation](#ablation--what-each-probe-and-measure-contributes).
+- **Recall does not improve with k.** When hashing finds the original it ranks
+  first; when it misses, the original is not in the list at all.
 
 The gap between 52% and 75% is the most useful thing in this document, and
 [the section on it](#why-the-two-numbers-disagree) is the one to read before
@@ -58,6 +67,47 @@ find.
 Four of the thirteen are recovered at `candidate` strength rather than
 `strong`, through pHash or a single-segment match — real but weaker evidence,
 and the tier says so.
+
+## recall@k: the system is binary
+
+| k | recall |
+| --- | --- |
+| 1 | 13/25 (52%) |
+| 3 | 13/25 (52%) |
+| 5 | 13/25 (52%) |
+
+**Recall does not improve with k at all.** When the correct original is found it
+ranks first; when it is missed it is not in the list anywhere. There is no
+middle ground where the right answer sits at rank 3 waiting to be noticed.
+
+That is worth knowing for two reasons. It means the headline recall figure is
+not hiding near-misses that a longer candidate list would rescue — 52% is the
+real number, not an artefact of only counting rank 1. And it tells the panel
+what to show: a long candidate list adds nothing here, because the candidates
+below the top result are never the answer.
+
+## Earliest-date accuracy
+
+Recall asks *"did we find the right case?"* This asks *"was the date we
+reported actually the earliest?"* — which is the claim the panel puts in front
+of a user, and a different question.
+
+| tier | answered | date exact | accuracy |
+| --- | --- | --- | --- |
+| `strong` | 9 | 9 | 100% |
+| `candidate` | 4 | 4 | 100% |
+| all | 13 | 13 | **100%** |
+
+12 of 25 queries returned `no_evidence` and are not counted here — there is no
+date to be right or wrong about.
+
+**Read this as a corollary, not as independent evidence.** With zero false
+positives, every answered query matched the correct case, and the correct case
+carries the correct date by construction. The metric is near-tautological on a
+clean run. It is still worth having: it is the check that would catch a date
+being mangled somewhere in the pipeline, and on any run with a false positive
+it drops immediately — a wrong case means a wrong date, which is exactly the
+user-facing harm.
 
 ## Thresholds, and why they are what they are
 
@@ -249,6 +299,57 @@ different scales and only one of them decided anything.
 Each appearance now carries `method` — `pdq`, `crop_segments` or `phash` — and
 the `distance` belonging to that measure. The contract change is additive and
 documented in [`api.md`](api.md).
+
+---
+
+# Ablation — what each probe and measure contributes
+
+## Across probes
+
+| probe | cases recovered |
+| --- | --- |
+| `c2pa` only | **0/25** |
+| `phash` only | 13/25 |
+| both | 13/25 |
+
+**Not one of the 50 images in this corpus — originals and reused copies alike —
+carries a C2PA manifest.**
+
+That is the premise of the project measured rather than asserted. Platforms
+strip Content Credentials on upload, so provenance metadata is unavailable
+exactly where it would be most useful. It answers "why not just use C2PA?"
+with a number instead of an argument, and it is the single most quotable line
+in this document for Workshop 2.
+
+The probe stays in the pipeline for two reasons. When a manifest *is* present
+it is the only probe that can establish **attested context** rather than mere
+appearance — see [`terminology.md`](terminology.md) — and its absence is itself
+a finding worth reporting. But hashing carries the load, and whatever replaces
+hashing carries the project.
+
+## Inside the hash probe
+
+With `c2pa` contributing nothing, the ablation that carries information is
+which measure actually did the work:
+
+| measure | cases | tier it reports |
+| --- | --- | --- |
+| PDQ | 6/13 | `strong` |
+| crop-resistant segments | 3/13 | `strong` |
+| pHash | 4/13 | `candidate` |
+
+**No measure is redundant.** Dropping any one costs between a quarter and a
+half of all recall:
+
+- **PDQ** is the backbone — exact, fast, and the only one with a comfortable
+  safety margin (63 to the noise floor).
+- **Crop-resistant segments** earn their cost: 3 of 13 recoveries come from
+  nowhere else, and they are the only thing that recovers any heavy crop.
+- **pHash** contributes 4 of 13 — nearly a third — which settles an open
+  question. Its margin is thin (4) and it produced the only surviving false
+  positive, so dropping it was tempting. The ablation says it would cost 31% of
+  recall to remove. It stays, at `candidate` tier, which is the honest place for
+  a measure that is this useful and this noisy.
 
 ---
 

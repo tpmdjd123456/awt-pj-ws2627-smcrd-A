@@ -122,7 +122,7 @@ cost an afternoon.
 ```bash
 python tools/build_hash_index.py                       # hash every original in the dataset
 python -m service.probes.phash_probe some-image.jpg    # query it
-python tools/evaluate_hashing.py                       # real pairs: recall + false positives
+python tools/evaluate_hashing.py                       # recall@k, date accuracy, ablation, false positives
 python tools/evaluate_transformations.py               # synthetic set: survival per transformation
 ```
 
@@ -148,6 +148,16 @@ Both are correct, and the gap is the finding. Compression, resizing,
 screenshots, watermarks, text overlays and mirroring are all recovered 25/25.
 Cropping is the break-point: full recall at 5% and 10%, 14/25 at 20%, then
 collapse — 5/25 at 30%.
+
+**No image in the corpus carries a C2PA manifest** — 0 of 50, originals and
+reused copies alike. Platforms strip Content Credentials on upload, so the
+provenance metadata is missing exactly where it would help most. That is the
+project's premise, measured. Inside the hash probe no measure is redundant
+either: PDQ finds 6 of the 13, crop-resistant segments 3, pHash 4.
+
+Recall does not improve with k — recall@1, @3 and @5 are all 13/25. When
+hashing finds the original it ranks first; when it misses, the original is not
+in the list at all.
 
 By transformation on real reuse: **resizes 8/8, crops 4/14**, AI edits 1/2.
 Real crops are heavy and off-centre, which is what a global hash cannot
